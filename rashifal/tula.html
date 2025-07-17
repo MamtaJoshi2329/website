@@ -77,8 +77,13 @@
       </div>
 
       <div class="date-nav">
-        <div class="date-item" id="prev-day" onclick="showCalendarDay('wednesday', this)">
-          <span class="date-arrow">←</span>
+        <div class="date-item" id="calendar-monday" onclick="showCalendarDay('monday', this)">
+          <span class="date-day">MONDAY</span>
+        </div>
+        <div class="date-item" id="calendar-tuesday" onclick="showCalendarDay('tuesday', this)">
+          <span class="date-day">TUESDAY</span>
+        </div>
+        <div class="date-item" id="calendar-wednesday" onclick="showCalendarDay('wednesday', this)">
           <span class="date-day">WEDNESDAY</span>
         </div>
         <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
@@ -88,11 +93,36 @@
         </div>
         <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
           <span class="date-day">FRIDAY</span>
-          <span class="date-arrow">→</span>
+        </div>
+        <div class="date-item" id="calendar-saturday" onclick="showCalendarDay('saturday', this)">
+          <span class="date-day">SATURDAY</span>
+        </div>
+        <div class="date-item" id="calendar-sunday" onclick="showCalendarDay('sunday', this)">
+          <span class="date-day">SUNDAY</span>
         </div>
       </div>
 
       <!-- Day-specific rashifal content -->
+      <div id="monday-block" class="day-block" style="display:none">
+        <h2>Tula Rashifal | Libra Prediction (Monday)</h2>
+        <div class="rashifal-card">
+          <h3>Monday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for taking charge of partnerships and collaborations. Your leadership in relationships will be recognized. Creative partnerships will flourish.</p>
+          <p><b>Health & Wellness:</b> Physical energy will be high. Focus on activities that boost your confidence. Exercise and outdoor activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your charisma will attract positive partnerships. Family relationships will be harmonious. Romantic relationships will be passionate.</p>
+          <p><b>Finance:</b> Good day for leadership-based financial opportunities. Investment in partnerships will be profitable. Your confidence will attract success.</p>
+        </div>
+      </div>
+      <div id="tuesday-block" class="day-block" style="display:none">
+        <h2>Tula Rashifal | Libra Prediction (Tuesday)</h2>
+        <div class="rashifal-card">
+          <h3>Tuesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for courage in partnerships. Your determination in relationships will be valuable. Competitive collaborations will favor you.</p>
+          <p><b>Health & Wellness:</b> Physical strength will be excellent. Focus on martial arts or competitive sports. Your energy will be at its peak.</p>
+          <p><b>Relationships:</b> Your courage will impress partners. Family relationships will be strong. Romantic relationships will be exciting and passionate.</p>
+          <p><b>Finance:</b> Good day for competitive financial ventures. Investment in sports or fitness partnerships will be profitable. Your determination will bring success.</p>
+        </div>
+      </div>
       <div id="wednesday-block" class="day-block" style="display:none">
         <h2>Tula Rashifal | Libra Prediction (Wednesday)</h2>
         <div class="rashifal-card">
@@ -123,17 +153,45 @@
           <p><b>Finance:</b> Creative financial ventures will be profitable. Investment in arts and beauty will be beneficial. Avoid overspending on luxuries.</p>
         </div>
       </div>
+      <div id="saturday-block" class="day-block" style="display:none">
+        <h2>Tula Rashifal | Libra Prediction (Saturday)</h2>
+        <div class="rashifal-card">
+          <h3>Saturday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for disciplined partnerships and long-term planning. Your patience in relationships will be rewarded. Hard work in collaborations will bring success.</p>
+          <p><b>Health & Wellness:</b> Focus on structured exercise routines. Discipline in health habits will be beneficial. Avoid stress and practice patience.</p>
+          <p><b>Relationships:</b> Your reliability will strengthen partnerships. Family bonds will deepen. Romantic relationships will be stable and committed.</p>
+          <p><b>Finance:</b> Good day for long-term financial planning. Investment in stable partnerships will be profitable. Avoid risky investments.</p>
+        </div>
+      </div>
+      <div id="sunday-block" class="day-block" style="display:none">
+        <h2>Tula Rashifal | Libra Prediction (Sunday)</h2>
+        <div class="rashifal-card">
+          <h3>Sunday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for leadership in partnerships and authority. Your confidence in relationships will shine. Recognition and respect will come your way.</p>
+          <p><b>Health & Wellness:</b> Vitality and energy will be high. Focus on activities that boost your confidence. Leadership in fitness activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your leadership qualities will attract admiration. Family relationships will be strong. Romantic relationships will be passionate and confident.</p>
+          <p><b>Finance:</b> Leadership-based financial gains. Investment in authority positions will be profitable. Your confidence will attract success.</p>
+        </div>
+      </div>
 
       <script>
       function showCalendarDay(day, el) {
+        document.getElementById('monday-block').style.display = 'none';
+        document.getElementById('tuesday-block').style.display = 'none';
         document.getElementById('wednesday-block').style.display = 'none';
         document.getElementById('thursday-block').style.display = 'none';
         document.getElementById('friday-block').style.display = 'none';
+        document.getElementById('saturday-block').style.display = 'none';
+        document.getElementById('sunday-block').style.display = 'none';
         document.getElementById(day+'-block').style.display = 'block';
         document.querySelectorAll('.date-item').forEach(btn => btn.classList.remove('active'));
-        if(day==='wednesday') document.getElementById('prev-day').classList.add('active');
+        if(day==='monday') document.getElementById('calendar-monday').classList.add('active');
+        else if(day==='tuesday') document.getElementById('calendar-tuesday').classList.add('active');
+        else if(day==='wednesday') document.getElementById('calendar-wednesday').classList.add('active');
         else if(day==='thursday') document.getElementById('calendar-thursday').classList.add('active');
         else if(day==='friday') document.getElementById('calendar-friday').classList.add('active');
+        else if(day==='saturday') document.getElementById('calendar-saturday').classList.add('active');
+        else if(day==='sunday') document.getElementById('calendar-sunday').classList.add('active');
       }
       // Set Thursday as default visible
       showCalendarDay('thursday', document.getElementById('calendar-thursday'));

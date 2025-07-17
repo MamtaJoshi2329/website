@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Optimism will guide you today. You may plan for higher education or travel. Avoid being too blunt in communication. Your philosophical nature will be appreciated. Focus on spiritual growth.</p>
+            <p><b>Career & Work:</b> Today is excellent for higher education and teaching roles. Your optimism will inspire others. Travel-related work will be successful.</p>
+            <p><b>Health & Wellness:</b> Physical energy will be high. Focus on outdoor activities and sports. Adventure and exploration will be beneficial.</p>
+            <p><b>Relationships:</b> Your optimistic nature will attract positive people. Family relationships will be harmonious. Romantic relationships will be adventurous.</p>
+            <p><b>Finance:</b> Good day for education-based investments. Travel-related financial opportunities. Investment in knowledge and learning will be profitable.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for higher education and travel. Your optimism will be highly valued. New adventures will bring success.</p>
+            <p><b>Health & Wellness:</b> Physical health will be excellent. Focus on outdoor activities and sports. Adventure and exploration will bring joy.</p>
+            <p><b>Relationships:</b> Your optimistic nature will strengthen relationships. New friendships through travel. Romantic relationships will be adventurous.</p>
+            <p><b>Finance:</b> Education and travel-based financial gains. Investment in knowledge and exploration will be profitable. Good week for learning opportunities.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid being overly blunt or direct. Don't let restlessness affect commitments. Be patient with learning processes.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for higher education and travel. New opportunities in teaching will arise. Financial gains through knowledge.</p>
+            <p><b>Health & Relationships:</b> Physical health will be excellent. Adventure-based relationships will flourish. Love relationships will be exciting.</p>
+            <p><b>Travel & Education:</b> Educational travel will be beneficial. Learning new skills will be successful. Adventure activities will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is good for philosophical and spiritual learning. Meditation and exploration will bring inner growth.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for higher education and travel for Sagittarius natives. Major achievements through knowledge and exploration.</p>
+            <p><b>Career & Business:</b> Career growth through education and teaching will be significant. New opportunities in travel and education. Business success through knowledge.</p>
+            <p><b>Health & Relationships:</b> Physical health will be excellent. Adventure-based relationships will strengthen. Love relationships will be exciting and fulfilling.</p>
+            <p><b>Key Advice:</b> Focus on higher education and travel. Your optimism will bring success. Trust your adventurous nature.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Innovation and creativity will be highlighted today. You may come up with unique solutions. Avoid being too detached from emotions. Your humanitarian nature will be appreciated. Focus on teamwork.</p>
+            <p><b>Career & Work:</b> Today is excellent for innovative projects and humanitarian work. Your unique ideas will be valued. Team collaboration will be successful.</p>
+            <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on activities that stimulate your mind. Social activities will be beneficial.</p>
+            <p><b>Relationships:</b> Your humanitarian nature will attract like-minded people. Group activities will strengthen relationships. Romantic relationships will be intellectual.</p>
+            <p><b>Finance:</b> Good day for innovative financial ventures. Investment in technology and social causes will be profitable. Your unique approach will bring success.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for innovation and humanitarian work. Your unique ideas will be highly valued. Social causes will bring success.</p>
+            <p><b>Health & Wellness:</b> Mental health will be excellent. Focus on activities that stimulate your mind. Group activities will bring joy.</p>
+            <p><b>Relationships:</b> Your humanitarian nature will strengthen relationships. New friendships through social causes. Romantic relationships will be intellectual and meaningful.</p>
+            <p><b>Finance:</b> Innovation-based financial gains. Investment in technology and social causes will be profitable. Good week for unique ventures.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid being overly detached from emotions. Don't let idealism affect practical decisions. Be patient with group dynamics.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for innovation and humanitarian work. New opportunities in technology will arise. Financial gains through unique ventures.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Social relationships will flourish. Love relationships will be intellectual and fulfilling.</p>
+            <p><b>Travel & Education:</b> Innovation-based travel will be beneficial. Learning new technologies will be successful. Social activities will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is good for humanitarian spiritual practices. Meditation and social service will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for innovation and humanitarian work for Aquarius natives. Major achievements through unique ideas.</p>
+            <p><b>Career & Business:</b> Career growth through innovation will be significant. New opportunities in technology and social causes. Business success through unique approaches.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Social relationships will strengthen. Love relationships will be intellectual and meaningful.</p>
+            <p><b>Key Advice:</b> Focus on innovation and humanitarian work. Your unique ideas will bring success. Trust your intellectual nature.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

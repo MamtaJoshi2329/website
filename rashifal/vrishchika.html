@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Your determination will help achieve goals today. You may uncover hidden truths. Be careful with investments. Your intuition will be strong. Avoid being secretive with loved ones.</p>
+            <p><b>Career & Work:</b> Today is excellent for deep research and investigative work. Your intuition will guide you to hidden opportunities. Transformative projects will be successful.</p>
+            <p><b>Health & Wellness:</b> Emotional intensity will be high. Focus on activities that help you process deep emotions. Meditation and introspection will be beneficial.</p>
+            <p><b>Relationships:</b> Deep emotional connections will strengthen. Your loyalty and commitment will be appreciated. Romantic relationships will be intense and meaningful.</p>
+            <p><b>Finance:</b> Good day for research-based investments. Your intuition will guide financial decisions. Investment in research and investigation will be profitable.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for deep transformation and research. Your intuition will be highly valued. Hidden opportunities will be revealed.</p>
+            <p><b>Health & Wellness:</b> Emotional health will be intense but manageable. Focus on activities that help process deep emotions. Meditation will be particularly beneficial.</p>
+            <p><b>Relationships:</b> Deep emotional connections will strengthen. Loyalty and commitment will be rewarded. New meaningful relationships may form.</p>
+            <p><b>Finance:</b> Research-based financial gains. Investment in investigation and research will be profitable. Good week for uncovering hidden opportunities.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid being overly secretive or suspicious. Don't let intensity affect relationships. Be patient with transformation.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for deep research and transformation. New opportunities in investigation will arise. Financial gains through research.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be intense but fulfilling. Deep relationships will flourish. Love relationships will be transformative.</p>
+            <p><b>Travel & Education:</b> Research-based travel will be beneficial. Learning deep subjects will be successful. Investigation activities will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is good for deep spiritual practices. Meditation and introspection will bring inner transformation.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for deep transformation and research for Scorpio natives. Major achievements through investigation.</p>
+            <p><b>Career & Business:</b> Career growth through research and investigation will be significant. New opportunities in research fields. Business success through deep insights.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be intense but fulfilling. Deep relationships will strengthen. Love relationships will be transformative.</p>
+            <p><b>Key Advice:</b> Focus on deep research and transformation. Your intuition will guide you to success. Trust your investigative nature.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

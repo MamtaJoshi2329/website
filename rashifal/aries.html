@@ -77,20 +77,125 @@
       </div>
 
       <div class="date-nav">
-        <div class="date-item">
-          <span class="date-arrow">←</span>
+        <div class="date-item" id="calendar-monday" onclick="showCalendarDay('monday', this)">
+          <span class="date-day">MONDAY</span>
+        </div>
+        <div class="date-item" id="calendar-tuesday" onclick="showCalendarDay('tuesday', this)">
+          <span class="date-day">TUESDAY</span>
+        </div>
+        <div class="date-item" id="calendar-wednesday" onclick="showCalendarDay('wednesday', this)">
           <span class="date-day">WEDNESDAY</span>
         </div>
-        <div class="date-item active">
+        <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
           <span class="date-icon">📅</span>
           <span class="date-day">THURSDAY</span>
           <span class="date-number">17</span>
         </div>
-        <div class="date-item">
+        <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
           <span class="date-day">FRIDAY</span>
-          <span class="date-arrow">→</span>
+        </div>
+        <div class="date-item" id="calendar-saturday" onclick="showCalendarDay('saturday', this)">
+          <span class="date-day">SATURDAY</span>
+        </div>
+        <div class="date-item" id="calendar-sunday" onclick="showCalendarDay('sunday', this)">
+          <span class="date-day">SUNDAY</span>
         </div>
       </div>
+
+      <!-- Day-specific rashifal content -->
+      <div id="monday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Monday)</h2>
+        <div class="rashifal-card">
+          <h3>Monday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for taking charge and leading new initiatives. Your natural leadership will be recognized. Creative projects will flourish.</p>
+          <p><b>Health & Wellness:</b> Physical energy will be high. Focus on activities that boost your confidence. Exercise and outdoor activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your charisma will attract positive attention. Family relationships will be harmonious. Romantic relationships will be passionate.</p>
+          <p><b>Finance:</b> Good day for leadership-based financial opportunities. Investment in creative ventures will be profitable. Your confidence will attract success.</p>
+        </div>
+      </div>
+      <div id="tuesday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Tuesday)</h2>
+        <div class="rashifal-card">
+          <h3>Tuesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for courage and determination. Your fighting spirit will be valuable. Competitive situations will favor you.</p>
+          <p><b>Health & Wellness:</b> Physical strength will be excellent. Focus on martial arts or competitive sports. Your energy will be at its peak.</p>
+          <p><b>Relationships:</b> Your courage will impress others. Family relationships will be strong. Romantic relationships will be exciting and passionate.</p>
+          <p><b>Finance:</b> Good day for competitive financial ventures. Investment in sports or fitness will be profitable. Your determination will bring success.</p>
+        </div>
+      </div>
+      <div id="wednesday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Wednesday)</h2>
+        <div class="rashifal-card">
+          <h3>Wednesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for intellectual leadership and learning. Your communication skills will be valuable. Teaching or mentoring roles will be successful.</p>
+          <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on activities that stimulate your mind. Meditation and learning will be beneficial.</p>
+          <p><b>Relationships:</b> Intellectual conversations will strengthen relationships. Your wisdom will be appreciated. Family harmony will increase.</p>
+          <p><b>Finance:</b> Investment in education and skills will be profitable. Good day for long-term financial planning. Avoid impulsive decisions.</p>
+        </div>
+      </div>
+      <div id="thursday-block" class="day-block">
+        <h2>Mesha Rashifal | Aries Prediction (Thursday)</h2>
+        <div class="rashifal-card">
+          <h3>Thursday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for leadership in partnerships. Your balanced approach will be appreciated. New collaborations may form.</p>
+          <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on maintaining emotional balance. Yoga and meditation will be beneficial.</p>
+          <p><b>Relationships:</b> Romantic relationships will flourish. Family harmony will increase. Social interactions will be enjoyable.</p>
+          <p><b>Finance:</b> Partnership-based financial opportunities. Good day for joint investments. Avoid conflicts over money matters.</p>
+        </div>
+      </div>
+      <div id="friday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Friday)</h2>
+        <div class="rashifal-card">
+          <h3>Friday's Prediction</h3>
+          <p><b>Career & Work:</b> Creative leadership will be successful. Artistic projects will flourish. Your innovative ideas will be recognized and appreciated.</p>
+          <p><b>Health & Wellness:</b> Emotional well-being will be excellent. Creative activities will bring joy. Focus on beauty and self-expression.</p>
+          <p><b>Relationships:</b> Love and romance will be at their peak. Creative expressions of love will be appreciated. Family relationships will be harmonious.</p>
+          <p><b>Finance:</b> Creative financial ventures will be profitable. Investment in arts and entertainment will be beneficial. Avoid overspending on luxuries.</p>
+        </div>
+      </div>
+      <div id="saturday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Saturday)</h2>
+        <div class="rashifal-card">
+          <h3>Saturday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for disciplined work and long-term planning. Your patience and persistence will be rewarded. Hard work will bring success.</p>
+          <p><b>Health & Wellness:</b> Focus on structured exercise routines. Discipline in health habits will be beneficial. Avoid stress and practice patience.</p>
+          <p><b>Relationships:</b> Your reliability will strengthen relationships. Family bonds will deepen. Romantic relationships will be stable and committed.</p>
+          <p><b>Finance:</b> Good day for long-term financial planning. Investment in property or stable ventures will be profitable. Avoid risky investments.</p>
+        </div>
+      </div>
+      <div id="sunday-block" class="day-block" style="display:none">
+        <h2>Mesha Rashifal | Aries Prediction (Sunday)</h2>
+        <div class="rashifal-card">
+          <h3>Sunday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for leadership and authority. Your confidence and charisma will shine. Recognition and respect will come your way.</p>
+          <p><b>Health & Wellness:</b> Vitality and energy will be high. Focus on activities that boost your confidence. Leadership in fitness activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your leadership qualities will attract admiration. Family relationships will be strong. Romantic relationships will be passionate and confident.</p>
+          <p><b>Finance:</b> Leadership-based financial gains. Investment in authority positions will be profitable. Your confidence will attract success.</p>
+        </div>
+      </div>
+
+      <script>
+      function showCalendarDay(day, el) {
+        document.getElementById('monday-block').style.display = 'none';
+        document.getElementById('tuesday-block').style.display = 'none';
+        document.getElementById('wednesday-block').style.display = 'none';
+        document.getElementById('thursday-block').style.display = 'none';
+        document.getElementById('friday-block').style.display = 'none';
+        document.getElementById('saturday-block').style.display = 'none';
+        document.getElementById('sunday-block').style.display = 'none';
+        document.getElementById(day+'-block').style.display = 'block';
+        document.querySelectorAll('.date-item').forEach(btn => btn.classList.remove('active'));
+        if(day==='monday') document.getElementById('calendar-monday').classList.add('active');
+        else if(day==='tuesday') document.getElementById('calendar-tuesday').classList.add('active');
+        else if(day==='wednesday') document.getElementById('calendar-wednesday').classList.add('active');
+        else if(day==='thursday') document.getElementById('calendar-thursday').classList.add('active');
+        else if(day==='friday') document.getElementById('calendar-friday').classList.add('active');
+        else if(day==='saturday') document.getElementById('calendar-saturday').classList.add('active');
+        else if(day==='sunday') document.getElementById('calendar-sunday').classList.add('active');
+      }
+      // Set Thursday as default visible
+      showCalendarDay('thursday', document.getElementById('calendar-thursday'));
+      </script>
 
       <div class="language-nav">
         <button class="lang-btn active">English</button>

@@ -77,8 +77,13 @@
       </div>
 
       <div class="date-nav">
-        <div class="date-item" id="prev-day" onclick="showCalendarDay('wednesday', this)">
-          <span class="date-arrow">←</span>
+        <div class="date-item" id="calendar-monday" onclick="showCalendarDay('monday', this)">
+          <span class="date-day">MONDAY</span>
+        </div>
+        <div class="date-item" id="calendar-tuesday" onclick="showCalendarDay('tuesday', this)">
+          <span class="date-day">TUESDAY</span>
+        </div>
+        <div class="date-item" id="calendar-wednesday" onclick="showCalendarDay('wednesday', this)">
           <span class="date-day">WEDNESDAY</span>
         </div>
         <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
@@ -88,40 +93,105 @@
         </div>
         <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
           <span class="date-day">FRIDAY</span>
-          <span class="date-arrow">→</span>
+        </div>
+        <div class="date-item" id="calendar-saturday" onclick="showCalendarDay('saturday', this)">
+          <span class="date-day">SATURDAY</span>
+        </div>
+        <div class="date-item" id="calendar-sunday" onclick="showCalendarDay('sunday', this)">
+          <span class="date-day">SUNDAY</span>
         </div>
       </div>
 
       <!-- Day-specific rashifal content -->
+      <div id="monday-block" class="day-block" style="display:none">
+        <h2>Meena Rashifal | Pisces Prediction (Monday)</h2>
+        <div class="rashifal-card">
+          <h3>Monday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for taking charge of spiritual and compassionate work. Your leadership in helping others will be recognized. Creative spiritual projects will flourish.</p>
+          <p><b>Health & Wellness:</b> Physical energy will be high. Focus on activities that boost your spiritual confidence. Exercise and outdoor activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your spiritual charisma will attract positive people. Family relationships will be harmonious. Romantic relationships will be passionate.</p>
+          <p><b>Finance:</b> Good day for leadership-based spiritual opportunities. Investment in charitable ventures will be profitable. Your confidence will attract success.</p>
+        </div>
+      </div>
+      <div id="tuesday-block" class="day-block" style="display:none">
+        <h2>Meena Rashifal | Pisces Prediction (Tuesday)</h2>
+        <div class="rashifal-card">
+          <h3>Tuesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for courage in spiritual work. Your determination in helping others will be valuable. Competitive healing situations will favor you.</p>
+          <p><b>Health & Wellness:</b> Physical strength will be excellent. Focus on martial arts or competitive sports. Your energy will be at its peak.</p>
+          <p><b>Relationships:</b> Your courage will impress others. Family relationships will be strong. Romantic relationships will be exciting and passionate.</p>
+          <p><b>Finance:</b> Good day for competitive spiritual ventures. Investment in sports or fitness will be profitable. Your determination will bring success.</p>
+        </div>
+      </div>
       <div id="wednesday-block" class="day-block" style="display:none">
         <h2>Meena Rashifal | Pisces Prediction (Wednesday)</h2>
         <div class="rashifal-card">
-          <p>Wednesday's rashifal content goes here.</p>
+          <h3>Wednesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for intellectual and spiritual work. Your intuition will guide you to hidden opportunities. Teaching and learning will be successful.</p>
+          <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on activities that stimulate your mind. Meditation and learning will be beneficial.</p>
+          <p><b>Relationships:</b> Intellectual conversations will strengthen relationships. Your wisdom will be appreciated. Family harmony will increase.</p>
+          <p><b>Finance:</b> Investment in education and skills will be profitable. Good day for long-term financial planning. Avoid impulsive decisions.</p>
         </div>
       </div>
       <div id="thursday-block" class="day-block">
         <h2>Meena Rashifal | Pisces Prediction (Thursday)</h2>
         <div class="rashifal-card">
-          <p>Thursday's rashifal content goes here.</p>
+          <h3>Thursday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for spiritual and compassionate work. Your empathy will be valued. Healing and helping professions will be successful.</p>
+          <p><b>Health & Wellness:</b> Emotional well-being will be excellent. Focus on activities that bring inner peace. Meditation and spiritual practices will be beneficial.</p>
+          <p><b>Relationships:</b> Compassionate connections will strengthen. Your empathy will be appreciated. Romantic relationships will be deeply emotional.</p>
+          <p><b>Finance:</b> Spiritual and healing-based financial opportunities. Good day for charitable investments. Avoid conflicts over money matters.</p>
         </div>
       </div>
       <div id="friday-block" class="day-block" style="display:none">
         <h2>Meena Rashifal | Pisces Prediction (Friday)</h2>
         <div class="rashifal-card">
-          <p>Friday's rashifal content goes here.</p>
+          <h3>Friday's Prediction</h3>
+          <p><b>Career & Work:</b> Creative and artistic work will be successful. Your imagination will be highly valued. Spiritual and healing projects will flourish.</p>
+          <p><b>Health & Wellness:</b> Emotional and spiritual health will be excellent. Creative activities will bring joy. Focus on beauty and self-expression.</p>
+          <p><b>Relationships:</b> Love and romance will be at their peak. Creative expressions of love will be appreciated. Family relationships will be harmonious.</p>
+          <p><b>Finance:</b> Creative and spiritual financial ventures will be profitable. Investment in arts and healing will be beneficial. Avoid overspending on luxuries.</p>
+        </div>
+      </div>
+      <div id="saturday-block" class="day-block" style="display:none">
+        <h2>Meena Rashifal | Pisces Prediction (Saturday)</h2>
+        <div class="rashifal-card">
+          <h3>Saturday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for disciplined spiritual work and long-term planning. Your patience in helping others will be rewarded. Hard work in healing will bring success.</p>
+          <p><b>Health & Wellness:</b> Focus on structured spiritual routines. Discipline in health habits will be beneficial. Avoid stress and practice patience.</p>
+          <p><b>Relationships:</b> Your reliability will strengthen spiritual connections. Family bonds will deepen. Romantic relationships will be stable and committed.</p>
+          <p><b>Finance:</b> Good day for long-term spiritual planning. Investment in stable charitable ventures will be profitable. Avoid risky investments.</p>
+        </div>
+      </div>
+      <div id="sunday-block" class="day-block" style="display:none">
+        <h2>Meena Rashifal | Pisces Prediction (Sunday)</h2>
+        <div class="rashifal-card">
+          <h3>Sunday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for leadership in spiritual work and authority. Your confidence in helping others will shine. Recognition and respect will come your way.</p>
+          <p><b>Health & Wellness:</b> Vitality and spiritual energy will be high. Focus on activities that boost your confidence. Leadership in spiritual activities will be beneficial.</p>
+          <p><b>Relationships:</b> Your spiritual leadership qualities will attract admiration. Family relationships will be strong. Romantic relationships will be passionate and confident.</p>
+          <p><b>Finance:</b> Leadership-based spiritual gains. Investment in authority positions will be profitable. Your confidence will attract success.</p>
         </div>
       </div>
 
       <script>
       function showCalendarDay(day, el) {
+        document.getElementById('monday-block').style.display = 'none';
+        document.getElementById('tuesday-block').style.display = 'none';
         document.getElementById('wednesday-block').style.display = 'none';
         document.getElementById('thursday-block').style.display = 'none';
         document.getElementById('friday-block').style.display = 'none';
+        document.getElementById('saturday-block').style.display = 'none';
+        document.getElementById('sunday-block').style.display = 'none';
         document.getElementById(day+'-block').style.display = 'block';
         document.querySelectorAll('.date-item').forEach(btn => btn.classList.remove('active'));
-        if(day==='wednesday') document.getElementById('prev-day').classList.add('active');
+        if(day==='monday') document.getElementById('calendar-monday').classList.add('active');
+        else if(day==='tuesday') document.getElementById('calendar-tuesday').classList.add('active');
+        else if(day==='wednesday') document.getElementById('calendar-wednesday').classList.add('active');
         else if(day==='thursday') document.getElementById('calendar-thursday').classList.add('active');
         else if(day==='friday') document.getElementById('calendar-friday').classList.add('active');
+        else if(day==='saturday') document.getElementById('calendar-saturday').classList.add('active');
+        else if(day==='sunday') document.getElementById('calendar-sunday').classList.add('active');
       }
       // Set Thursday as default visible
       showCalendarDay('thursday', document.getElementById('calendar-thursday'));
@@ -160,7 +230,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Your compassionate nature will be in focus today. You may help someone in need. Avoid being too emotional. Your artistic talents will be recognized. Take care of your feet and water intake.</p>
+            <p><b>Career & Work:</b> Today brings opportunities for spiritual and compassionate work. Your empathy will be valued. Healing and helping professions will be successful.</p>
+            <p><b>Health & Wellness:</b> Emotional well-being will be excellent. Focus on activities that bring inner peace. Meditation and spiritual practices will be beneficial.</p>
+            <p><b>Relationships:</b> Compassionate connections will strengthen. Your empathy will be appreciated. Romantic relationships will be deeply emotional.</p>
+            <p><b>Finance:</b> Spiritual and healing-based financial opportunities. Good day for charitable investments. Avoid conflicts over money matters.</p>
           </div>
 
           <div class="past-event">
@@ -174,6 +247,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for spiritual and compassionate work. Your empathy will be highly valued. Healing and helping others will bring success.</p>
+            <p><b>Health & Wellness:</b> Emotional and spiritual health will be excellent. Focus on activities that bring inner peace. Meditation and spiritual practices will be beneficial.</p>
+            <p><b>Relationships:</b> Your compassionate nature will strengthen relationships. Helping others will bring new friendships. Romantic relationships will be deeply emotional.</p>
+            <p><b>Finance:</b> Spiritual and healing-based financial gains. Investment in charitable causes will be profitable. Good week for helping others.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid being overly emotional or sensitive. Don't let compassion affect practical decisions. Be patient with spiritual growth.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for spiritual and compassionate work. New opportunities in healing will arise. Financial gains through helping others.</p>
+            <p><b>Health & Relationships:</b> Emotional and spiritual health will be excellent. Compassionate relationships will flourish. Love relationships will be deeply meaningful.</p>
+            <p><b>Travel & Education:</b> Spiritual travel will be beneficial. Learning healing skills will be successful. Compassionate activities will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is excellent for spiritual practices. Meditation and helping others will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for spiritual and compassionate work for Pisces natives. Major achievements through helping others.</p>
+            <p><b>Career & Business:</b> Career growth through spiritual and healing work will be significant. New opportunities in helping professions. Business success through compassion.</p>
+            <p><b>Health & Relationships:</b> Emotional and spiritual health will be excellent. Compassionate relationships will strengthen. Love relationships will be deeply meaningful.</p>
+            <p><b>Key Advice:</b> Focus on spiritual growth and helping others. Your compassion will bring success. Trust your intuitive nature.</p>
           </div>
         </div>
       </div>
@@ -191,5 +289,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
