@@ -309,6 +309,209 @@
         document.querySelector('.' + sections[index]).style.display = 'block';
       });
     });
+
+    // Language switching functionality
+    function changeLanguage(language) {
+      // Remove active class from all language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      event.target.classList.add('active');
+      
+      // Update the language indicator in header
+      const headerLangBtn = document.querySelector('.header-actions button');
+      
+      // Language-specific content and translations
+      const translations = {
+        english: {
+          title: 'Mesha Rashifal - Aries Horoscope | JoshiPanchang',
+          headerTitle: 'JoshiPanchang®',
+          headerTagline: 'Hindu Calendar for the world',
+          searchPlaceholder: 'Search Joshi Panchang',
+          rashifalTitle: 'Mesha Rashifal',
+          rashifalDate: 'Thursday, July 17, 2025',
+          daily: 'DAILY',
+          weekly: 'WEEKLY',
+          monthly: 'MONTHLY',
+          yearly: 'YEARLY',
+          locationPlaceholder: 'Enter your location',
+          chandrabalam: 'Chandrabalam',
+          todayPrediction: "Today's Prediction",
+          careerWork: 'Career & Work:',
+          healthWellness: 'Health & Wellness:',
+          relationships: 'Relationships:',
+          finance: 'Finance:',
+          remedies: 'Remedies:',
+          thisWeekPrediction: "This Week's Prediction",
+          thisMonthPrediction: "This Month's Prediction",
+          thisYearPrediction: "This Year's Prediction",
+          auspiciousPrediction: 'Auspicious Prediction:',
+          inauspiciousPrediction: 'Inauspicious Prediction:',
+          overallOutlook: 'Overall Outlook:',
+          keyAdvice: 'Key Advice:',
+          symbolText: '...know what Joshiji predicts for the day.'
+        },
+        hindi: {
+          title: 'मेष राशिफल - मेष राशि | जोशीपंचांग',
+          headerTitle: 'जोशीपंचांग®',
+          headerTagline: 'दुनिया के लिए हिंदू कैलेंडर',
+          searchPlaceholder: 'जोशी पंचांग खोजें',
+          rashifalTitle: 'मेष राशिफल',
+          rashifalDate: 'गुरुवार, 17 जुलाई, 2025',
+          daily: 'दैनिक',
+          weekly: 'साप्ताहिक',
+          monthly: 'मासिक',
+          yearly: 'वार्षिक',
+          locationPlaceholder: 'अपना स्थान दर्ज करें',
+          chandrabalam: 'चंद्रबलम',
+          todayPrediction: 'आज का भविष्यफल',
+          careerWork: 'करियर और काम:',
+          healthWellness: 'स्वास्थ्य और कल्याण:',
+          relationships: 'रिश्ते:',
+          finance: 'वित्त:',
+          remedies: 'उपाय:',
+          thisWeekPrediction: 'इस सप्ताह का भविष्यफल',
+          thisMonthPrediction: 'इस महीने का भविष्यफल',
+          thisYearPrediction: 'इस वर्ष का भविष्यफल',
+          auspiciousPrediction: 'शुभ भविष्यफल:',
+          inauspiciousPrediction: 'अशुभ भविष्यफल:',
+          overallOutlook: 'समग्र दृष्टिकोण:',
+          keyAdvice: 'मुख्य सलाह:',
+          symbolText: '...जानें कि जोशीजी आज के लिए क्या भविष्यवाणी करते हैं।'
+        },
+        gujarati: {
+          title: 'મેષ રાશિફળ - મેષ રાશિ | જોશીપંચાંગ',
+          headerTitle: 'જોશીપંચાંગ®',
+          headerTagline: 'વિશ્વ માટે હિંદુ કેલેન્ડર',
+          searchPlaceholder: 'જોશી પંચાંગ શોધો',
+          rashifalTitle: 'મેષ રાશિફળ',
+          rashifalDate: 'ગુરુવાર, 17 જુલાઈ, 2025',
+          daily: 'દૈનિક',
+          weekly: 'સાપ્તાહિક',
+          monthly: 'માસિક',
+          yearly: 'વાર્ષિક',
+          locationPlaceholder: 'તમારું સ્થાન દાખલ કરો',
+          chandrabalam: 'ચંદ્રબલમ',
+          todayPrediction: 'આજનું ભવિષ્યફળ',
+          careerWork: 'કારકિર્દી અને કામ:',
+          healthWellness: 'સ્વાસ્થ્ય અને કલ્યાણ:',
+          relationships: 'સંબંધો:',
+          finance: 'નાણાં:',
+          remedies: 'ઉપાયો:',
+          thisWeekPrediction: 'આ સપ્તાહનું ભવિષ્યફળ',
+          thisMonthPrediction: 'આ મહિનાનું ભવિષ્યફળ',
+          thisYearPrediction: 'આ વર્ષનું ભવિષ્યફળ',
+          auspiciousPrediction: 'શુભ ભવિષ્યફળ:',
+          inauspiciousPrediction: 'અશુભ ભવિષ્યફળ:',
+          overallOutlook: 'સમગ્ર દૃષ્ટિકોણ:',
+          keyAdvice: 'મુખ્ય સલાહ:',
+          symbolText: '...જાણો કે જોશીજી આજે માટે શું ભવિષ્યવાણી કરે છે.'
+        },
+        marathi: {
+          title: 'मेष राशिफळ - मेष राशी | जोशीपंचांग',
+          headerTitle: 'जोशीपंचांग®',
+          headerTagline: 'जगासाठी हिंदू कॅलेंडर',
+          searchPlaceholder: 'जोशी पंचांग शोधा',
+          rashifalTitle: 'मेष राशिफळ',
+          rashifalDate: 'गुरुवार, 17 जुलै, 2025',
+          daily: 'दैनिक',
+          weekly: 'साप्ताहिक',
+          monthly: 'मासिक',
+          yearly: 'वार्षिक',
+          locationPlaceholder: 'तुमचे स्थान प्रविष्ट करा',
+          chandrabalam: 'चंद्रबलम',
+          todayPrediction: 'आजचे भविष्यफळ',
+          careerWork: 'करिअर आणि काम:',
+          healthWellness: 'आरोग्य आणि कल्याण:',
+          relationships: 'संबंध:',
+          finance: 'वित्त:',
+          remedies: 'उपाय:',
+          thisWeekPrediction: 'या आठवड्याचे भविष्यफळ',
+          thisMonthPrediction: 'या महिन्याचे भविष्यफळ',
+          thisYearPrediction: 'या वर्षाचे भविष्यफळ',
+          auspiciousPrediction: 'शुभ भविष्यफळ:',
+          inauspiciousPrediction: 'अशुभ भविष्यफळ:',
+          overallOutlook: 'एकूण दृष्टीकोन:',
+          keyAdvice: 'मुख्य सल्ला:',
+          symbolText: '...जाणून घ्या की जोशीजी आजसाठी काय भविष्यवाणी करतात.'
+        }
+      };
+
+      const lang = translations[language];
+      if (!lang) return;
+
+      // Update page title
+      document.title = lang.title;
+
+      // Update header content
+      document.querySelector('.site-title').textContent = lang.headerTitle;
+      document.querySelector('.site-tagline').textContent = lang.headerTagline;
+      document.querySelector('.search-input').placeholder = lang.searchPlaceholder;
+
+      // Update header language button
+      const langCodes = { english: 'En', hindi: 'हि', gujarati: 'ગુ', marathi: 'म' };
+      headerLangBtn.textContent = langCodes[language] || 'En';
+
+      // Update rashifal header
+      document.querySelector('.rashifal-title').textContent = lang.rashifalTitle;
+      document.querySelector('.rashifal-date').textContent = lang.rashifalDate;
+
+      // Update timeframe navigation
+      const timeframeTexts = document.querySelectorAll('.timeframe-text');
+      timeframeTexts[0].textContent = lang.daily;
+      timeframeTexts[1].textContent = lang.weekly;
+      timeframeTexts[2].textContent = lang.monthly;
+      timeframeTexts[3].textContent = lang.yearly;
+
+      // Update location placeholder
+      document.querySelector('.location-input input').placeholder = lang.locationPlaceholder;
+
+      // Update chandrabalam text
+      document.querySelector('.chandrabalam-text').textContent = lang.chandrabalam;
+
+      // Update prediction headings
+      document.querySelector('.daily-prediction h3').textContent = lang.todayPrediction;
+      document.querySelector('.weekly-prediction h3').textContent = lang.thisWeekPrediction;
+      document.querySelector('.monthly-prediction h3').textContent = lang.thisMonthPrediction;
+      document.querySelector('.yearly-prediction h3').textContent = lang.thisYearPrediction;
+
+      // Update symbol text
+      document.querySelector('.symbol-text').textContent = lang.symbolText;
+
+      // Update section labels in predictions
+      const careerLabels = document.querySelectorAll('.daily-prediction p b, .weekly-prediction p b, .monthly-prediction p b, .yearly-prediction p b');
+      careerLabels.forEach(label => {
+        const text = label.textContent;
+        if (text.includes('Career & Work')) label.textContent = lang.careerWork;
+        else if (text.includes('Health & Wellness')) label.textContent = lang.healthWellness;
+        else if (text.includes('Relationships')) label.textContent = lang.relationships;
+        else if (text.includes('Finance')) label.textContent = lang.finance;
+        else if (text.includes('Auspicious Prediction')) label.textContent = lang.auspiciousPrediction;
+        else if (text.includes('Inauspicious Prediction')) label.textContent = lang.inauspiciousPrediction;
+        else if (text.includes('Overall Outlook')) label.textContent = lang.overallOutlook;
+        else if (text.includes('Key Advice')) label.textContent = lang.keyAdvice;
+      });
+
+      // Update remedies heading
+      document.querySelector('.remedies h3').textContent = lang.remedies;
+
+      // Store language preference
+      localStorage.setItem('preferredLanguage', language);
+    }
+
+    // Load saved language preference on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLanguage = localStorage.getItem('preferredLanguage') || 'english';
+      changeLanguage(savedLanguage);
+      
+      // Set the correct language button as active
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(savedLanguage)) {
+          btn.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html> 
