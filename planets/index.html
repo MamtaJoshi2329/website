@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planets | JoshiPanchang</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .planets-container { max-width: 900px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .planets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5em; }
+    .planet-card { background: #ffe0b2; border-radius: 12px; padding: 1.5em; text-align: center; box-shadow: 0 2px 8px #ffecb3; transition: transform 0.15s; }
+    .planet-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 4px 16px #ffecb3; }
+    .planet-icon { font-size: 2.5em; margin-bottom: 0.5em; }
+    .planet-name { font-size: 1.3em; font-weight: bold; color: #d84315; margin-bottom: 0.3em; }
+    .planet-desc { color: #6d4c41; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <div class="planets-container">
+    <h1 style="text-align:center; color:#d84315;">Navagraha (Nine Planets)</h1>
+    <div class="planets-grid">
+      <div class="planet-card">
+        <div class="planet-icon">☀️</div>
+        <div class="planet-name">Surya (Sun)</div>
+        <div class="planet-desc">Represents soul, vitality, leadership, and father. Governs Sunday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">🌙</div>
+        <div class="planet-name">Chandra (Moon)</div>
+        <div class="planet-desc">Represents mind, emotions, mother, and intuition. Governs Monday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">♂️</div>
+        <div class="planet-name">Mangal (Mars)</div>
+        <div class="planet-desc">Represents energy, courage, siblings, and action. Governs Tuesday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">☿️</div>
+        <div class="planet-name">Budh (Mercury)</div>
+        <div class="planet-desc">Represents intellect, communication, business, and friends. Governs Wednesday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">♃</div>
+        <div class="planet-name">Guru (Jupiter)</div>
+        <div class="planet-desc">Represents wisdom, spirituality, teachers, and expansion. Governs Thursday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">♀️</div>
+        <div class="planet-name">Shukra (Venus)</div>
+        <div class="planet-desc">Represents love, beauty, luxury, and relationships. Governs Friday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">♄</div>
+        <div class="planet-name">Shani (Saturn)</div>
+        <div class="planet-desc">Represents discipline, karma, hard work, and obstacles. Governs Saturday.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">☊</div>
+        <div class="planet-name">Rahu (North Node)</div>
+        <div class="planet-desc">Represents obsession, materialism, foreign elements, and illusion.</div>
+      </div>
+      <div class="planet-card">
+        <div class="planet-icon">☋</div>
+        <div class="planet-name">Ketu (South Node)</div>
+        <div class="planet-desc">Represents detachment, spirituality, past karma, and liberation.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
