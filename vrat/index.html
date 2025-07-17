@@ -21,18 +21,64 @@
   </style>
 </head>
 <body>
-  <div class="calendar-container">
-    <div class="calendar-header">
-      <button onclick="changeMonth(-1)">← Prev</button>
-      <span id="calendar-month">July 2025</span>
-      <button onclick="changeMonth(1)">Next →</button>
-    </div>
-    <div class="calendar-grid" id="calendar-grid">
-      <!-- Calendar days and dates will be rendered here -->
-    </div>
-    <div class="vrat-list" id="vrat-list">
-      <!-- Vrat list for selected date -->
-    </div>
+  <div class="content-wrapper">
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo-placeholder">🕉️</div>
+          <div>
+            <div class="site-title">JoshiPanchang®</div>
+            <div class="site-tagline">Hindu Calendar for the world</div>
+          </div>
+        </div>
+        <div class="search-section">
+          <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search Joshi Panchang">
+            <button class="search-button">🔍</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="app-buttons">
+            <a href="#" class="app-button">📱</a>
+            <a href="#" class="app-button">🍎</a>
+          </div>
+          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../panchang/">Panchang</a></li>
+        <li><a href="../calendar/">Calendars</a></li>
+        <li><a href="../muhurat/">Muhurat</a></li>
+        <li><a href="../vrat/">Vrat & Upavas</a></li>
+        <li><a href="../festivals/">Festivals</a></li>
+        <li><a href="../jyotish/">Jyotish</a></li>
+        <li><a href="../planets/">Planets</a></li>
+        <li><a href="../lyrics/">Lyrics</a></li>
+        <li><a href="../gallery/">Gallery</a></li>
+        <li><a href="../others/">Others</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button onclick="changeMonth(-1)">← Prev</button>
+          <span id="calendar-month">July 2025</span>
+          <button onclick="changeMonth(1)">Next →</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid">
+          <!-- Calendar days and dates will be rendered here -->
+        </div>
+        <div class="vrat-list" id="vrat-list">
+          <!-- Vrat list for selected date -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+    </footer>
   </div>
   <script>
     // Example vrat data (replace with real data)
