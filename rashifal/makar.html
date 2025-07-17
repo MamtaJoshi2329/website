@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Makar Rashifal - Capricorn Horoscope | JoshiPanchang</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .rashifal-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+      gap: 8px;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      background: #ffe0b2;
+      color: #d84315;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.15s;
+    }
+    .tab-btn.active {
+      background: #ff7043;
+      color: #fff;
+    }
+    .rashifal-tab-content {
+      background: #ff7043;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 18px;
+      font-size: 1.13em;
+      box-shadow: 0 2px 12px rgba(255,112,67,0.10);
+      margin-bottom: 1.5em;
+      min-height: 80px;
+      display: none;
+    }
+    .rashifal-tab-content.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <div class="content-wrapper">
@@ -57,99 +95,188 @@
         <p class="rashifal-date">Thursday, July 17, 2025</p>
       </div>
 
-      <div class="timeframe-nav">
-        <div class="timeframe-item active">
-          <span class="timeframe-letter">D</span>
-          <span class="timeframe-text">DAILY</span>
-        </div>
-        <div class="timeframe-item">
-          <span class="timeframe-letter">W</span>
-          <span class="timeframe-text">WEEKLY</span>
-        </div>
-        <div class="timeframe-item">
-          <span class="timeframe-letter">M</span>
-          <span class="timeframe-text">MONTHLY</span>
-        </div>
-        <div class="timeframe-item">
-          <span class="timeframe-letter">Y</span>
-          <span class="timeframe-text">YEARLY</span>
-        </div>
-      </div>
+      <!-- Remove the day-nav buttons -->
 
       <div class="date-nav">
-        <div class="date-item">
+        <div class="date-item" id="prev-day" onclick="switchCalendarDay(-1)">
           <span class="date-arrow">←</span>
           <span class="date-day">WEDNESDAY</span>
         </div>
-        <div class="date-item active">
+        <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
           <span class="date-icon">📅</span>
           <span class="date-day">THURSDAY</span>
           <span class="date-number">17</span>
         </div>
-        <div class="date-item">
+        <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
           <span class="date-day">FRIDAY</span>
           <span class="date-arrow">→</span>
         </div>
       </div>
 
-      <div class="language-nav">
-        <button class="lang-btn active">English</button>
-        <button class="lang-btn">हिन्दी</button>
-        <button class="lang-btn">ગુજરાતી</button>
-        <button class="lang-btn">મરાઠી</button>
-      </div>
-
-      <div class="location-section">
-        <div class="location-input">
-          <span class="location-icon">📍</span>
-          <input type="text" value="New Delhi, India" placeholder="Enter your location">
+      <!-- Day-specific rashifal content -->
+      <div id="wednesday-block" class="day-block" style="display:none">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'wednesday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'wednesday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'wednesday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'wednesday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
         </div>
-      </div>
-
-      <div class="rashifal-subtitle">
-        <h2>Makar Rashifal | Capricorn Prediction</h2>
-      </div>
-
-      <div class="rashifal-content">
-        <div class="rashifal-symbol">
-          <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
-        </div>
-
-        <div class="rashifal-details">
-          <div class="chandrabalam">
-            <span class="moon-icon">🌙</span>
-            <span class="chandrabalam-text">Chandrabalam</span>
-            <span class="chandrabalam-time">till 03:39 AM, Jul 18</span>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Panditji predicts for the day.</p>
           </div>
-
-          <div class="daily-prediction">
-            <h3>Today's Prediction</h3>
-            <p>Hard work will bring success today. You may achieve career milestones. Avoid being too rigid. Your patience will be rewarded. Take care of your bones and joints.</p>
+          <div id="old-daily-wednesday" class="old-rashifal-section">
+            <h3>Wednesday's Prediction</h3>
+            <p>Placeholder for DenikPanchang Wednesday daily rashifal.</p>
           </div>
-
-          <div class="past-event">
-            <div class="event-header">
-              <span class="saturn-icon">🪐</span>
-              <span class="event-title">July 13, 2025, Sunday Shani Vakri Effect on Makar Rashi</span>
-            </div>
-            <p>Many people may oppose you without any reason. Women may have some health problems. Try to avoid unnecessary stress. Avoid borrowing or lending money for the next four months.</p>
+          <div id="old-weekly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p>Placeholder for DenikPanchang Wednesday weekly rashifal.</p>
           </div>
-
-          <div class="remedies">
-            <h3>Remedies</h3>
-            <p>Light a Diya under the Peepal tree on Saturday.</p>
+          <div id="old-monthly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p>Placeholder for DenikPanchang Wednesday monthly rashifal.</p>
+          </div>
+          <div id="old-yearly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p>Placeholder for DenikPanchang Wednesday yearly rashifal.</p>
           </div>
         </div>
       </div>
 
-      <div class="nebula-section">
-        <h3>NEBULA</h3>
-        <div class="nebula-chart">
-          <!-- Astrological chart placeholder -->
-          <div class="chart-placeholder">📊</div>
+      <div id="thursday-block" class="day-block">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'thursday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'thursday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'thursday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'thursday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
+        </div>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Panditji predicts for the day.</p>
+          </div>
+          <div id="old-daily-thursday" class="old-rashifal-section">
+            <h3>Thursday's Prediction</h3>
+            <p>Today, mental pressure may increase on you. Your in-laws may face problems. You are not able to use your intelligence properly. You may have headaches. Migraine patients should take special care of their diet and sleep.</p>
+          </div>
+          <div id="old-weekly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week, you will feel a special kind of closeness in personal relationships. This week will be favorable for business. You will get excellent support from your colleagues at work.</p>
+            <p><b>Inauspicious Prediction:</b> You may face some challenges in financial matters. Avoid taking major decisions without proper consultation. Health requires attention, especially related to joint pains.</p>
+          </div>
+          <div id="old-monthly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month brings opportunities for career growth. New business ventures may prove profitable. Investment decisions should be made carefully after proper research.</p>
+            <p><b>Health & Relationships:</b> Health will remain generally good. Family relationships will be harmonious. Students will achieve good results in their studies.</p>
+          </div>
+          <div id="old-yearly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be transformative for Capricorn natives. Major changes in career and personal life are indicated. Financial stability will improve gradually.</p>
+            <p><b>Key Advice:</b> Focus on building long-term relationships and avoid unnecessary risks. Your hard work will pay off in the second half of the year. Health should be monitored regularly.</p>
+          </div>
         </div>
       </div>
+
+      <div id="friday-block" class="day-block" style="display:none">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'friday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'friday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'friday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'friday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
+        </div>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Panditji predicts for the day.</p>
+          </div>
+          <div id="old-daily-friday" class="old-rashifal-section">
+            <h3>Friday's Prediction</h3>
+            <p>Placeholder for DenikPanchang Friday daily rashifal.</p>
+          </div>
+          <div id="old-weekly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p>Placeholder for DenikPanchang Friday weekly rashifal.</p>
+          </div>
+          <div id="old-monthly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p>Placeholder for DenikPanchang Friday monthly rashifal.</p>
+          </div>
+          <div id="old-yearly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p>Placeholder for DenikPanchang Friday yearly rashifal.</p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Remove showDay function
+        function showCalendarDay(day, el) {
+          document.getElementById('wednesday-block').style.display = 'none';
+          document.getElementById('thursday-block').style.display = 'none';
+          document.getElementById('friday-block').style.display = 'none';
+          document.getElementById(day+'-block').style.display = 'block';
+          document.querySelectorAll('.date-item').forEach(btn => btn.classList.remove('active'));
+          if(day==='wednesday') document.getElementById('prev-day').classList.add('active');
+          else if(day==='thursday') document.getElementById('calendar-thursday').classList.add('active');
+          else if(day==='friday') document.getElementById('calendar-friday').classList.add('active');
+        }
+        function switchCalendarDay(dir) {
+          // dir: -1 for left, +1 for right
+          var days = ['wednesday','thursday','friday'];
+          var current = days.findIndex(d => document.getElementById(d+'-block').style.display !== 'none');
+          var next = current + dir;
+          if(next < 0 || next >= days.length) return;
+          showCalendarDay(days[next], document.getElementById('calendar-'+days[next]));
+        }
+        function showOldTab(tab, el, day) {
+          ['daily','weekly','monthly','yearly'].forEach(function(t) {
+            document.getElementById('old-'+t+'-'+day).style.display = 'none';
+          });
+          document.getElementById('old-'+tab+'-'+day).style.display = 'block';
+          el.parentElement.querySelectorAll('.timeframe-item').forEach(item => item.classList.remove('active'));
+          el.classList.add('active');
+        }
+        // Set Thursday as default visible
+        showCalendarDay('thursday', document.getElementById('calendar-thursday'));
+      </script>
     </main>
 
     <footer>

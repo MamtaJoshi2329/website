@@ -156,7 +156,7 @@
             </select>
         </div>
         <div class="category-tabs">
-            {% for cat in categories %}
+            {% for cat in categories if cat in ["daily", "weekly", "monthly", "yearly"] %}
             <a href="/rashifal/{{ rashi }}/{{ cat }}/{{ lang }}" class="category-tab{% if cat == category %} active{% endif %}">{{ cat.capitalize() }}</a>
             {% endfor %}
         </div>
@@ -165,7 +165,23 @@
             <a href="/rashifal/{{ rashi }}/{{ category }}/{{ l }}" class="lang-tab{% if l == lang %} active{% endif %}">{{ lang_labels[l] }}</a>
             {% endfor %}
         </div>
-        <div class="rashifal-card">{{ rashifal_text }}</div>
+        <div class="rashifal-card">
+            {% if category == 'daily' %}
+                <h3>Today's Prediction</h3>
+                {{ rashifal_text }}
+            {% elif category == 'weekly' %}
+                <h3>This Week's Prediction</h3>
+                {{ all_texts['weekly'][lang] or 'No weekly rashifal available.' }}
+            {% elif category == 'monthly' %}
+                <h3>This Month's Prediction</h3>
+                {{ all_texts['monthly'][lang] or 'No monthly rashifal available.' }}
+            {% elif category == 'yearly' %}
+                <h3>This Year's Prediction</h3>
+                {{ all_texts['yearly'][lang] or 'No yearly rashifal available.' }}
+            {% else %}
+                {{ rashifal_text }}
+            {% endif %}
+        </div>
         <!-- Placeholder for Chandrabalam, remedies, etc. -->
         <div style="margin: 1.5em 0; color: #8d6e63; text-align: center; font-size: 1em;">
             <em>Chandrabalam, remedies, and other info can be shown here.</em>

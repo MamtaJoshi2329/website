@@ -19,7 +19,7 @@ RASHIS = [
     {"en": "Pisces", "hi": "मीन", "icon": "\u2653", "img": "pisces.png"}
 ]
 
-CATEGORIES = ["daily", "weekly", "yearly", "muhurat", "nakshatra"]
+CATEGORIES = ["daily", "weekly", "monthly", "yearly", "muhurat", "nakshatra"]
 LANGUAGES = ["en", "hi"]
 LANG_LABELS = {"en": "English", "hi": "हिन्दी"}
 
