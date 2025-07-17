@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vrat & Upvas Calendar | JoshiPanchang</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calendar-container { max-width: 600px; margin: 2em auto; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; padding: 2em; }
+    .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1em; }
+    .calendar-header button { background: #ff7043; color: #fff; border: none; border-radius: 6px; padding: 6px 16px; font-size: 1em; cursor: pointer; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .calendar-day, .calendar-date { text-align: center; padding: 8px 0; }
+    .calendar-day { font-weight: bold; color: #d84315; }
+    .calendar-date { background: #ffe0b2; border-radius: 6px; cursor: pointer; transition: background 0.15s; }
+    .calendar-date.has-vrat { background: #ff7043; color: #fff; font-weight: bold; }
+    .calendar-date.selected { border: 2px solid #d84315; }
+    .vrat-list { margin-top: 2em; background: #fff3e0; border-radius: 10px; padding: 1em; }
+    .vrat-list h3 { margin-top: 0; color: #d84315; }
+    .vrat-item { margin-bottom: 0.5em; }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button onclick="changeMonth(-1)">← Prev</button>
+      <span id="calendar-month">July 2025</span>
+      <button onclick="changeMonth(1)">Next →</button>
+    </div>
+    <div class="calendar-grid" id="calendar-grid">
+      <!-- Calendar days and dates will be rendered here -->
+    </div>
+    <div class="vrat-list" id="vrat-list">
+      <!-- Vrat list for selected date -->
+    </div>
+  </div>
+  <script>
+    // Example vrat data (replace with real data)
+    const vratData = {
+      '2025-07-13': [
+        { name: 'Devshayani Ekadashi', details: 'Auspicious day for fasting and prayers.' }
+      ],
+      '2025-07-17': [
+        { name: 'Pradosh Vrat', details: 'Observed for Lord Shiva.' }
+      ],
+      '2025-07-21': [
+        { name: 'Purnima Vrat', details: 'Full moon fasting.' }
+      ]
+    };
+    let currentMonth = 6; // July (0-indexed)
+    let currentYear = 2025;
+    let selectedDate = '2025-07-17';
+
+    function renderCalendar() {
+      const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const grid = document.getElementById('calendar-grid');
+      grid.innerHTML = '';
+      days.forEach(day => {
+        const d = document.createElement('div');
+        d.className = 'calendar-day';
+        d.textContent = day;
+        grid.appendChild(d);
+      });
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+      // Empty slots
+      for(let i=0; i<firstDay; i++) {
+        const empty = document.createElement('div');
+        grid.appendChild(empty);
+      }
+      for(let d=1; d<=daysInMonth; d++) {
+        const dateStr = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        const dateDiv = document.createElement('div');
+        dateDiv.className = 'calendar-date';
+        if(vratData[dateStr]) dateDiv.classList.add('has-vrat');
+        if(dateStr === selectedDate) dateDiv.classList.add('selected');
+        dateDiv.textContent = d;
+        dateDiv.onclick = () => { selectedDate = dateStr; renderCalendar(); renderVratList(); };
+        grid.appendChild(dateDiv);
+      }
+      document.getElementById('calendar-month').textContent = `${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}`;
+    }
+    function renderVratList() {
+      const list = document.getElementById('vrat-list');
+      const vrats = vratData[selectedDate];
+      if(vrats) {
+        list.innerHTML = `<h3>Vrats on ${selectedDate}</h3>` + vrats.map(v => `<div class='vrat-item'><b>${v.name}</b>: ${v.details}</div>`).join('');
+      } else {
+        list.innerHTML = `<h3>No Vrats on ${selectedDate}</h3>`;
+      }
+    }
+    function changeMonth(delta) {
+      currentMonth += delta;
+      if(currentMonth < 0) { currentMonth = 11; currentYear--; }
+      if(currentMonth > 11) { currentMonth = 0; currentYear++; }
+      // Select first day of new month
+      selectedDate = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-01`;
+      renderCalendar();
+      renderVratList();
+    }
+    renderCalendar();
+    renderVratList();
+  </script>
+</body>
+</html> 
