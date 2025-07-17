@@ -156,5 +156,42 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+  <script>
+    // Search bar functionality
+    function handleSearch(query) {
+      const map = {
+        'planets': 'planets/',
+        'planet': 'planets/',
+        'vrat': 'vrat/',
+        'upavas': 'vrat/',
+        'gallery': 'gallery/',
+        'jyotish': 'jyotish/',
+        'lyrics': 'lyrics/',
+        'festivals': 'festivals/',
+        'others': 'others/',
+        'settings': 'settings/',
+        'panchang': 'panchang/',
+        'calendar': 'calendar/',
+        'muhurat': 'muhurat/'
+      };
+      const key = query.trim().toLowerCase();
+      if(map[key]) {
+        window.location.href = map[key];
+      } else {
+        const input = document.querySelector('.search-input');
+        input.classList.add('error');
+        setTimeout(()=>input.classList.remove('error'), 1200);
+      }
+    }
+    document.querySelector('.search-input').addEventListener('keydown', function(e) {
+      if(e.key === 'Enter') {
+        handleSearch(this.value);
+      }
+    });
+    document.querySelector('.search-button').addEventListener('click', function() {
+      const input = document.querySelector('.search-input');
+      handleSearch(input.value);
+    });
+  </script>
 </body>
 </html> 
