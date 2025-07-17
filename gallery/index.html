@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | JoshiPanchang</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .gallery-container { max-width: 1000px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .gallery-title { text-align: center; color: #d84315; margin-bottom: 1.5em; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5em; }
+    .gallery-item { background: #ffe0b2; border-radius: 12px; padding: 1em; text-align: center; box-shadow: 0 2px 8px #ffecb3; }
+    .gallery-img { width: 100%; max-width: 180px; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 0.7em; }
+    .gallery-caption { color: #6d4c41; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo-placeholder">🕉️</div>
+          <div>
+            <div class="site-title">JoshiPanchang®</div>
+            <div class="site-tagline">Hindu Calendar for the world</div>
+          </div>
+        </div>
+        <div class="search-section">
+          <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search Joshi Panchang">
+            <button class="search-button">🔍</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="app-buttons">
+            <a href="#" class="app-button">📱</a>
+            <a href="#" class="app-button">🍎</a>
+          </div>
+          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../panchang/">Panchang</a></li>
+        <li><a href="../calendar/">Calendars</a></li>
+        <li><a href="../muhurat/">Muhurat</a></li>
+        <li><a href="../vrat/">Vrat & Upavas</a></li>
+        <li><a href="../festivals/">Festivals</a></li>
+        <li><a href="../jyotish/">Jyotish</a></li>
+        <li><a href="../planets/">Planets</a></li>
+        <li><a href="../lyrics/">Lyrics</a></li>
+        <li><a href="../gallery/">Gallery</a></li>
+        <li><a href="../others/">Others</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="gallery-container">
+        <h1 class="gallery-title">Photo Gallery</h1>
+        <div class="gallery-categories" id="gallery-categories"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+      <!-- Lightbox -->
+      <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; flex-direction:column;">
+        <span id="lightbox-close" style="position:absolute; top:30px; right:40px; font-size:2.5em; color:#fff; cursor:pointer;">&times;</span>
+        <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:70vh; border-radius:12px; box-shadow:0 2px 16px #000; margin-bottom:1em;">
+        <div style="display:flex; gap:1.5em; justify-content:center;">
+          <a id="lightbox-download" href="#" download style="background:#ff7043; color:#fff; padding:8px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">Download</a>
+          <button id="lightbox-share" style="background:#ffe0b2; color:#d84315; border:none; padding:8px 18px; border-radius:8px; font-weight:bold; cursor:pointer;">Copy Link</button>
+        </div>
+        <div id="lightbox-caption" style="color:#fff; margin-top:1em; font-size:1.1em;"></div>
+      </div>
+      <script>
+      // Example gallery data
+      const galleryData = [
+        { src: '../static/rashifal/aries.png', caption: 'Aries Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/taurus.png', caption: 'Taurus Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/leo.png', caption: 'Leo Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/capricorn.png', caption: 'Capricorn Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/pisces.png', caption: 'Pisces Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/libra.png', caption: 'Libra Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/aquarius.png', caption: 'Aquarius Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/cancer.png', caption: 'Cancer Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/scorpio.png', caption: 'Scorpio Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/sagittarius.png', caption: 'Sagittarius Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/gemini.png', caption: 'Gemini Symbol', category: 'Zodiac' },
+        { src: '../static/rashifal/virgo.png', caption: 'Virgo Symbol', category: 'Zodiac' },
+        { src: '../static/gallery/deity1.jpg', caption: 'Lord Ganesha', category: 'Deities' },
+        { src: '../static/gallery/deity2.jpg', caption: 'Goddess Lakshmi', category: 'Deities' },
+        { src: '../static/gallery/festival1.jpg', caption: 'Diwali Festival', category: 'Festivals' },
+        { src: '../static/gallery/festival2.jpg', caption: 'Holi Festival', category: 'Festivals' },
+        { src: '../static/gallery/wallpaper1.jpg', caption: 'Spiritual Wallpaper', category: 'Wallpapers' },
+        { src: '../static/gallery/wallpaper2.jpg', caption: 'Temple Wallpaper', category: 'Wallpapers' }
+      ];
+      const categories = ['All', 'Zodiac', 'Deities', 'Festivals', 'Wallpapers'];
+      let currentCategory = 'All';
+      function renderCategories() {
+        const catDiv = document.getElementById('gallery-categories');
+        catDiv.innerHTML = categories.map(cat => `<button class="gallery-cat-btn${cat===currentCategory?' active':''}" onclick="setCategory('${cat}')">${cat}</button>`).join(' ');
+      }
+      function setCategory(cat) {
+        currentCategory = cat;
+        renderCategories();
+        renderGallery();
+      }
+      function renderGallery() {
+        const grid = document.getElementById('gallery-grid');
+        let filtered = currentCategory==='All' ? galleryData : galleryData.filter(img => img.category===currentCategory);
+        grid.innerHTML = filtered.map(img => `
+          <div class="gallery-item">
+            <img src="${img.src}" alt="${img.caption}" class="gallery-img" onclick="openLightbox('${img.src}','${img.caption}')">
+            <div class="gallery-caption">${img.caption}</div>
+          </div>
+        `).join('');
+      }
+      function openLightbox(src, caption) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox-caption').textContent = caption;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-download').href = src;
+        document.getElementById('lightbox-share').onclick = function() {
+          navigator.clipboard.writeText(window.location.origin + '/' + src.replace('../',''));
+          this.textContent = 'Copied!';
+          setTimeout(()=>{this.textContent='Copy Link';}, 1200);
+        };
+      }
+      document.getElementById('lightbox-close').onclick = function() {
+        document.getElementById('lightbox').style.display = 'none';
+      };
+      // Initial render
+      renderCategories();
+      renderGallery();
+      </script>
+    </main>
+    <footer>
+      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html> 
