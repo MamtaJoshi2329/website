@@ -38,7 +38,7 @@ SELECTORS = {
 def scrape_rashifal():
     today = date.today().isoformat()
     all_data = {}
-    # Fetch the main DenikPanchang rashifal page
+    # Fetch the main JoshiPanchang rashifal page
     url = "https://www.drikpanchang.com/astrology/prediction/vedic-astrology-rashiphal.html"
     resp = requests.get(url)
     soup = BeautifulSoup(resp.text, "html.parser")

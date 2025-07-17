@@ -113,7 +113,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/aries.png" alt="Aries" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Today, mental pressure may increase on you. Your in-laws may face problems. You are not able to use your intelligence properly. You may have headaches. Migraine patients should take special care of their diet and sleep.</p>
+            <p><b>Career & Work:</b> Today is excellent for taking initiative and leadership roles. Your energy and enthusiasm will be recognized. New opportunities may arise in your field.</p>
+            <p><b>Health & Wellness:</b> Your physical energy will be high. Focus on exercise and outdoor activities. Avoid stress and maintain a positive attitude.</p>
+            <p><b>Relationships:</b> Communication will be direct and effective. Family relationships will be harmonious. Romantic relationships will be passionate.</p>
+            <p><b>Finance:</b> Good day for financial planning and investments. Avoid impulsive spending. Your hard work will bring financial rewards.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for career advancement. Your leadership skills will be recognized. New projects will be successful.</p>
+            <p><b>Health & Wellness:</b> Your energy levels will remain high. Focus on physical activities and sports. Mental clarity will improve.</p>
+            <p><b>Relationships:</b> Family relationships will be harmonious. Romantic relationships will be passionate. New friendships may form.</p>
+            <p><b>Finance:</b> Good week for financial gains. Investment opportunities may arise. Avoid unnecessary expenses.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid conflicts with authority figures. Be patient with slow progress. Don't let impatience affect relationships.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for career growth. New job opportunities may arise. Business expansion is indicated. Financial stability will improve.</p>
+            <p><b>Health & Relationships:</b> Health will remain excellent. Family relationships will strengthen. Love relationships will flourish.</p>
+            <p><b>Travel & Education:</b> Short trips will be beneficial. Learning new skills will be successful. Adventure activities will bring joy.</p>
+            <p><b>Spiritual Growth:</b> This month is good for spiritual practices. Meditation and yoga will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly dynamic and successful for Aries natives. Major career achievements are indicated. Personal growth will be significant.</p>
+            <p><b>Career & Business:</b> Professional success will be remarkable. Leadership opportunities will arise. New business ventures will be profitable.</p>
+            <p><b>Health & Relationships:</b> Health will remain excellent. Family relationships will strengthen. Love relationships will be passionate and fulfilling.</p>
+            <p><b>Key Advice:</b> Channel your energy positively. Be patient with long-term goals. Your determination will lead to great success.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html> 

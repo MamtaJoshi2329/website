@@ -96,19 +96,31 @@
       <div id="wednesday-block" class="day-block" style="display:none">
         <h2>Kanya Rashifal | Virgo Prediction (Wednesday)</h2>
         <div class="rashifal-card">
-          <p>Wednesday's rashifal content goes here.</p>
+          <h3>Wednesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for detailed work and analysis. Your organizational skills will be recognized. Research and planning will be successful.</p>
+          <p><b>Health & Wellness:</b> Focus on maintaining a healthy routine. Pay attention to diet and exercise. Mental clarity will be excellent.</p>
+          <p><b>Relationships:</b> Communication will be clear and precise. Help others with your practical advice. Family relationships will be harmonious.</p>
+          <p><b>Finance:</b> Good day for financial planning and budgeting. Avoid unnecessary expenses. Investment in health and education.</p>
         </div>
       </div>
       <div id="thursday-block" class="day-block">
         <h2>Kanya Rashifal | Virgo Prediction (Thursday)</h2>
         <div class="rashifal-card">
-          <p>Thursday's rashifal content goes here.</p>
+          <h3>Thursday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for learning and skill development. Your attention to detail will be valuable. Teaching or mentoring roles will be successful.</p>
+          <p><b>Health & Wellness:</b> Mental health will be excellent. Focus on intellectual activities. Meditation and yoga will be beneficial.</p>
+          <p><b>Relationships:</b> Intellectual conversations will strengthen relationships. Help others with your knowledge. Family harmony will increase.</p>
+          <p><b>Finance:</b> Investment in education and skills will be profitable. Good day for long-term financial planning. Avoid impulsive decisions.</p>
         </div>
       </div>
       <div id="friday-block" class="day-block" style="display:none">
         <h2>Kanya Rashifal | Virgo Prediction (Friday)</h2>
         <div class="rashifal-card">
-          <p>Friday's rashifal content goes here.</p>
+          <h3>Friday's Prediction</h3>
+          <p><b>Career & Work:</b> Creative problem-solving will be successful. Your artistic and analytical skills will combine well. Team collaborations will be fruitful.</p>
+          <p><b>Health & Wellness:</b> Emotional well-being will be excellent. Creative activities will bring joy. Focus on beauty and harmony.</p>
+          <p><b>Relationships:</b> Creative expressions of love will be appreciated. Family relationships will be harmonious. Social interactions will be enjoyable.</p>
+          <p><b>Finance:</b> Creative financial ventures will be profitable. Investment in arts and beauty will be beneficial. Avoid overspending on luxuries.</p>
         </div>
       </div>
 
@@ -148,7 +160,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/virgo.png" alt="Virgo" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -160,7 +172,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Attention to detail will be your strength today. You may complete pending work efficiently. Health will remain stable. Avoid overthinking. Your analytical skills will be appreciated.</p>
+            <p><b>Career & Work:</b> Today brings opportunities for learning and skill development. Your attention to detail will be valuable. Teaching or mentoring roles will be successful.</p>
+            <p><b>Health & Wellness:</b> Mental health will be excellent. Focus on intellectual activities. Meditation and yoga will be beneficial.</p>
+            <p><b>Relationships:</b> Intellectual conversations will strengthen relationships. Help others with your knowledge. Family harmony will increase.</p>
+            <p><b>Finance:</b> Investment in education and skills will be profitable. Good day for long-term financial planning. Avoid impulsive decisions.</p>
           </div>
 
           <div class="past-event">
@@ -174,6 +189,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for learning and skill development. Your analytical abilities will be highly valued. Career growth through knowledge.</p>
+            <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on intellectual pursuits and healthy routines. Meditation will be particularly beneficial.</p>
+            <p><b>Relationships:</b> Communication will be clear and helpful. Family relationships will strengthen through practical support. New friendships through learning.</p>
+            <p><b>Finance:</b> Investment in education and skills will be profitable. Good week for financial planning. Avoid unnecessary expenses.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid overthinking and perfectionism. Don't be too critical of yourself or others. Be patient with slow progress.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for career advancement through learning. New educational opportunities will arise. Financial stability through knowledge.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Family relationships will strengthen through practical support. Love relationships will be stable.</p>
+            <p><b>Travel & Education:</b> Educational travel will be beneficial. Learning new skills will be successful. Research activities will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is good for intellectual spiritual practices. Meditation and yoga will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for learning and intellectual growth for Virgo natives. Major career achievements through knowledge.</p>
+            <p><b>Career & Business:</b> Career growth through education and skills will be significant. New opportunities in teaching and research. Business success through analysis.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Family relationships will strengthen. Love relationships will be stable and practical.</p>
+            <p><b>Key Advice:</b> Focus on continuous learning and skill development. Your analytical nature will bring success. Help others with your knowledge.</p>
           </div>
         </div>
       </div>
@@ -191,5 +231,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

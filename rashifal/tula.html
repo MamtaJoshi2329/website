@@ -96,19 +96,31 @@
       <div id="wednesday-block" class="day-block" style="display:none">
         <h2>Tula Rashifal | Libra Prediction (Wednesday)</h2>
         <div class="rashifal-card">
-          <p>Wednesday's rashifal content goes here.</p>
+          <h3>Wednesday's Prediction</h3>
+          <p><b>Career & Work:</b> Today is excellent for negotiations and partnerships. Your diplomatic skills will be valuable. Team collaborations will be successful.</p>
+          <p><b>Health & Wellness:</b> Focus on maintaining balance in your daily routine. Light exercise and meditation will be beneficial. Avoid stress.</p>
+          <p><b>Relationships:</b> Communication will be harmonious. Partnership decisions will be favorable. Family relationships will be balanced.</p>
+          <p><b>Finance:</b> Good day for financial planning and investments. Avoid impulsive decisions. Partnership-based financial gains.</p>
         </div>
       </div>
       <div id="thursday-block" class="day-block">
         <h2>Tula Rashifal | Libra Prediction (Thursday)</h2>
         <div class="rashifal-card">
-          <p>Thursday's rashifal content goes here.</p>
+          <h3>Thursday's Prediction</h3>
+          <p><b>Career & Work:</b> Today brings opportunities for leadership in partnerships. Your balanced approach will be appreciated. New collaborations may form.</p>
+          <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on maintaining emotional balance. Yoga and meditation will be beneficial.</p>
+          <p><b>Relationships:</b> Romantic relationships will flourish. Family harmony will increase. Social interactions will be enjoyable.</p>
+          <p><b>Finance:</b> Partnership-based financial opportunities. Good day for joint investments. Avoid conflicts over money matters.</p>
         </div>
       </div>
       <div id="friday-block" class="day-block" style="display:none">
         <h2>Tula Rashifal | Libra Prediction (Friday)</h2>
         <div class="rashifal-card">
-          <p>Friday's rashifal content goes here.</p>
+          <h3>Friday's Prediction</h3>
+          <p><b>Career & Work:</b> Creative partnerships will be successful. Artistic collaborations will flourish. Your aesthetic sense will be recognized.</p>
+          <p><b>Health & Wellness:</b> Emotional well-being will be excellent. Creative activities will bring joy. Focus on beauty and harmony.</p>
+          <p><b>Relationships:</b> Love and romance will be at their peak. Creative expressions of love will be appreciated. Family relationships will be harmonious.</p>
+          <p><b>Finance:</b> Creative financial ventures will be profitable. Investment in arts and beauty will be beneficial. Avoid overspending on luxuries.</p>
         </div>
       </div>
 
@@ -148,7 +160,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/libra.png" alt="Libra" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -160,7 +172,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Balance in relationships will be important today. You may face decisions regarding partnerships. Avoid indecisiveness. Your diplomatic nature will help resolve conflicts. Focus on harmony.</p>
+            <p><b>Career & Work:</b> Today brings opportunities for leadership in partnerships. Your balanced approach will be appreciated. New collaborations may form.</p>
+            <p><b>Health & Wellness:</b> Mental clarity will be excellent. Focus on maintaining emotional balance. Yoga and meditation will be beneficial.</p>
+            <p><b>Relationships:</b> Romantic relationships will flourish. Family harmony will increase. Social interactions will be enjoyable.</p>
+            <p><b>Finance:</b> Partnership-based financial opportunities. Good day for joint investments. Avoid conflicts over money matters.</p>
           </div>
 
           <div class="past-event">
@@ -174,6 +189,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for partnerships and collaborations. Your diplomatic skills will be highly valued. Relationship harmony will increase.</p>
+            <p><b>Health & Wellness:</b> Emotional balance will be maintained. Focus on activities that bring inner peace. Meditation will be particularly beneficial.</p>
+            <p><b>Relationships:</b> Partnership decisions will be favorable. Family relationships will strengthen. New meaningful relationships may form.</p>
+            <p><b>Finance:</b> Partnership-based financial gains. Joint investments will be profitable. Avoid financial conflicts.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid indecisiveness in important matters. Don't let others' opinions sway you too much. Be firm in your decisions.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for partnerships and collaborations. New business partnerships will form. Financial stability through joint ventures.</p>
+            <p><b>Health & Relationships:</b> Emotional well-being will be excellent. Love relationships will flourish. Family harmony will increase.</p>
+            <p><b>Travel & Education:</b> Partnership-based travel will be beneficial. Learning through collaboration will be successful. Cultural activities will bring joy.</p>
+            <p><b>Spiritual Growth:</b> This month is good for spiritual practices with partners. Meditation and yoga will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for partnerships and relationships for Libra natives. Major relationship milestones are indicated.</p>
+            <p><b>Career & Business:</b> Partnership-based career growth will be significant. New business collaborations will be successful. Leadership in partnerships.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be excellent. Love relationships will be fulfilling. Family relationships will strengthen.</p>
+            <p><b>Key Advice:</b> Focus on maintaining balance in all aspects of life. Your diplomatic nature will bring success. Trust your intuition in partnerships.</p>
           </div>
         </div>
       </div>
@@ -191,5 +231,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

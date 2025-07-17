@@ -113,7 +113,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/cancer.png" alt="Cancer" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Family matters will be in focus today. You may feel emotional and sensitive. Take care of your health, especially stomach issues. Avoid conflicts at home. Your intuition will guide you well.</p>
+            <p><b>Career & Work:</b> Today is excellent for nurturing and caring professions. Your intuition will guide you well in decisions. Team support and collaboration will be successful.</p>
+            <p><b>Health & Wellness:</b> Emotional well-being will be important. Focus on self-care and nurturing activities. Meditation and relaxation will be beneficial.</p>
+            <p><b>Relationships:</b> Family relationships will be harmonious and nurturing. Your caring nature will be appreciated. Romantic relationships will be emotionally fulfilling.</p>
+            <p><b>Finance:</b> Good day for family-related financial planning. Investment in home and family will be profitable. Trust your intuition in financial matters.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for family harmony and emotional fulfillment. Your nurturing nature will be highly valued. Intuition will guide you well.</p>
+            <p><b>Health & Wellness:</b> Emotional health will be excellent. Focus on self-care and nurturing activities. Meditation will be particularly beneficial.</p>
+            <p><b>Relationships:</b> Family relationships will strengthen through care and support. Romantic relationships will be emotionally fulfilling. New friendships through caring.</p>
+            <p><b>Finance:</b> Family-based financial gains. Investment in home and family will be profitable. Good week for real estate matters.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid being overly emotional in decisions. Don't let sensitivity affect your judgment. Be patient with family matters.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for nurturing and caring professions. Family-related financial gains. Investment in home and family will be profitable.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be excellent. Family relationships will flourish. Love relationships will be nurturing and fulfilling.</p>
+            <p><b>Travel & Education:</b> Family travel will be beneficial. Learning nurturing skills will be successful. Home-based education will bring satisfaction.</p>
+            <p><b>Spiritual Growth:</b> This month is good for emotional spiritual practices. Meditation and self-care will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for family and emotional fulfillment for Cancer natives. Major achievements through nurturing.</p>
+            <p><b>Career & Business:</b> Career growth through caring and nurturing will be significant. New opportunities in healthcare and family services. Business success through emotional intelligence.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be excellent. Family relationships will strengthen. Love relationships will be nurturing and fulfilling.</p>
+            <p><b>Key Advice:</b> Focus on nurturing relationships and family. Your intuition will guide you to success. Trust your emotional intelligence.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

@@ -113,7 +113,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/taurus.png" alt="Taurus" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Today is favorable for financial gains. You may receive good news from family. Your health will remain good. Avoid unnecessary arguments with colleagues. Focus on your goals with determination.</p>
+            <p><b>Career & Work:</b> Today is excellent for steady progress and building foundations. Your patience and determination will be rewarded. Long-term projects will move forward successfully.</p>
+            <p><b>Health & Wellness:</b> Physical health will be stable. Focus on maintaining a balanced diet and regular exercise routine. Avoid stress and practice patience.</p>
+            <p><b>Relationships:</b> Family relationships will be harmonious and stable. Your loyalty and commitment will be appreciated. Romantic relationships will deepen.</p>
+            <p><b>Finance:</b> Good day for financial planning and investments. Your practical approach to money will bring stability. Avoid impulsive spending.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for financial stability and material gains. Your practical approach will be highly valued. Long-term investments will be profitable.</p>
+            <p><b>Health & Wellness:</b> Physical health will remain stable. Focus on maintaining consistent routines. Patience will help overcome any health challenges.</p>
+            <p><b>Relationships:</b> Family relationships will strengthen through loyalty and commitment. Romantic relationships will be stable and deepening. New friendships through shared values.</p>
+            <p><b>Finance:</b> Steady financial growth through practical investments. Good week for property and real estate matters. Avoid risky financial ventures.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid stubbornness in important decisions. Don't resist necessary changes. Be patient with slow progress.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for building long-term career foundations. Financial stability will increase. Property investments will be profitable.</p>
+            <p><b>Health & Relationships:</b> Physical health will be excellent. Family relationships will strengthen through loyalty. Love relationships will be stable and committed.</p>
+            <p><b>Travel & Education:</b> Educational pursuits will be successful. Travel for business will be beneficial. Learning practical skills will bring rewards.</p>
+            <p><b>Spiritual Growth:</b> This month is good for grounding spiritual practices. Meditation and yoga will bring inner stability.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for building lasting foundations for Taurus natives. Major material achievements are indicated.</p>
+            <p><b>Career & Business:</b> Career growth through steady progress will be significant. Business ventures will be stable and profitable. Leadership through reliability.</p>
+            <p><b>Health & Relationships:</b> Physical health will be excellent. Family relationships will strengthen. Love relationships will be committed and stable.</p>
+            <p><b>Key Advice:</b> Focus on building lasting foundations. Your patience and determination will bring success. Trust in your practical approach.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

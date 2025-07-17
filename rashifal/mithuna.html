@@ -113,7 +113,7 @@
       <div class="rashifal-content">
         <div class="rashifal-symbol">
           <img src="../static/rashifal/gemini.png" alt="Gemini" width="120" height="120">
-          <p class="symbol-text">...know what Panditji predicts for the day.</p>
+                      <p class="symbol-text">...know what Joshiji predicts for the day.</p>
         </div>
 
         <div class="rashifal-details">
@@ -125,7 +125,10 @@
 
           <div class="daily-prediction">
             <h3>Today's Prediction</h3>
-            <p>Communication skills will be enhanced today. You may travel for work or pleasure. Students will perform well in studies. Avoid making hasty decisions. Your creativity will be at its peak.</p>
+            <p><b>Career & Work:</b> Today is excellent for communication and networking. Your adaptability will be valuable. Learning new skills will be successful. Teaching or writing projects will flourish.</p>
+            <p><b>Health & Wellness:</b> Mental agility will be high. Focus on activities that stimulate your mind. Light exercise and social interactions will be beneficial.</p>
+            <p><b>Relationships:</b> Communication will be clear and engaging. Social interactions will be enjoyable. Family relationships will strengthen through conversation.</p>
+            <p><b>Finance:</b> Good day for networking-based financial opportunities. Investment in education and communication skills will be profitable.</p>
           </div>
 
           <div class="past-event">
@@ -139,6 +142,31 @@
           <div class="remedies">
             <h3>Remedies</h3>
             <p>Light a Diya under the Peepal tree on Saturday.</p>
+          </div>
+
+          <div class="weekly-prediction" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for communication and learning. Your adaptability will be highly valued. Networking will bring new opportunities.</p>
+            <p><b>Health & Wellness:</b> Mental health will be excellent. Focus on activities that stimulate your mind. Social interactions will be beneficial.</p>
+            <p><b>Relationships:</b> Communication will strengthen all relationships. New friendships may form through social activities. Family relationships will be harmonious.</p>
+            <p><b>Finance:</b> Networking-based financial gains. Investment in education and communication will be profitable. Good week for travel-related income.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid spreading rumors or gossip. Don't make hasty decisions. Be patient with slow progress in some areas.</p>
+          </div>
+
+          <div class="monthly-prediction" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for communication-based career growth. New learning opportunities will arise. Financial gains through networking.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Social relationships will flourish. Family relationships will strengthen through communication.</p>
+            <p><b>Travel & Education:</b> Travel for learning will be beneficial. Educational pursuits will be successful. New skills will be acquired.</p>
+            <p><b>Spiritual Growth:</b> This month is good for intellectual spiritual practices. Meditation and learning will bring inner peace.</p>
+          </div>
+
+          <div class="yearly-prediction" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly favorable for communication and learning for Gemini natives. Major career achievements through adaptability.</p>
+            <p><b>Career & Business:</b> Career growth through communication and networking will be significant. New opportunities in media and education. Business success through adaptability.</p>
+            <p><b>Health & Relationships:</b> Mental health will be excellent. Social relationships will flourish. Family relationships will strengthen through communication.</p>
+            <p><b>Key Advice:</b> Focus on continuous learning and communication. Your adaptability will bring success. Network and build connections.</p>
           </div>
         </div>
       </div>
@@ -156,5 +184,26 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all prediction sections
+        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show corresponding section
+        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+        document.querySelector('.' + sections[index]).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
