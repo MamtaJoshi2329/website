@@ -77,20 +77,64 @@
       </div>
 
       <div class="date-nav">
-        <div class="date-item">
-          <span class="date-arrow">←</span>
+        <div class="date-item" id="calendar-monday" onclick="showCalendarDay('monday', this)">
+          <span class="date-day">MONDAY</span>
+        </div>
+        <div class="date-item" id="calendar-wednesday" onclick="showCalendarDay('wednesday', this)">
           <span class="date-day">WEDNESDAY</span>
         </div>
-        <div class="date-item active">
+        <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
           <span class="date-icon">📅</span>
           <span class="date-day">THURSDAY</span>
           <span class="date-number">17</span>
         </div>
-        <div class="date-item">
+        <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
           <span class="date-day">FRIDAY</span>
-          <span class="date-arrow">→</span>
         </div>
       </div>
+
+      <!-- Day-specific rashifal content -->
+      <div id="monday-block" class="day-block" style="display:none">
+        <h2>Simha Rashifal | Leo Prediction (Monday)</h2>
+        <div class="rashifal-card">
+          <p>Monday's rashifal content goes here.</p>
+        </div>
+      </div>
+      <div id="wednesday-block" class="day-block" style="display:none">
+        <h2>Simha Rashifal | Leo Prediction (Wednesday)</h2>
+        <div class="rashifal-card">
+          <p>Wednesday's rashifal content goes here.</p>
+        </div>
+      </div>
+      <div id="thursday-block" class="day-block">
+        <h2>Simha Rashifal | Leo Prediction (Thursday)</h2>
+        <div class="rashifal-card">
+          <p>Thursday's rashifal content goes here.</p>
+        </div>
+      </div>
+      <div id="friday-block" class="day-block" style="display:none">
+        <h2>Simha Rashifal | Leo Prediction (Friday)</h2>
+        <div class="rashifal-card">
+          <p>Friday's rashifal content goes here.</p>
+        </div>
+      </div>
+
+      <script>
+      function showCalendarDay(day, el) {
+        document.getElementById('monday-block').style.display = 'none';
+        document.getElementById('wednesday-block').style.display = 'none';
+        document.getElementById('thursday-block').style.display = 'none';
+        document.getElementById('friday-block').style.display = 'none';
+        document.getElementById(day+'-block').style.display = 'block';
+        document.querySelectorAll('.date-item').forEach(btn => btn.classList.remove('active'));
+        if(day==='monday') document.getElementById('calendar-monday').classList.add('active');
+        else if(day==='wednesday') document.getElementById('calendar-wednesday').classList.add('active');
+        else if(day==='thursday') document.getElementById('calendar-thursday').classList.add('active');
+        else if(day==='friday') document.getElementById('calendar-friday').classList.add('active');
+      }
+      // Set Thursday as default visible
+      showCalendarDay('thursday', document.getElementById('calendar-thursday'));
+      </script>
 
       <div class="language-nav">
         <button class="lang-btn active">English</button>

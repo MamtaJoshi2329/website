@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | JoshiPanchang</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .settings-container { max-width: 600px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .settings-title { text-align: center; color: #d84315; margin-bottom: 1.5em; }
+    .settings-section { margin-bottom: 2em; }
+    .settings-label { font-weight: bold; color: #d84315; margin-bottom: 0.5em; display: block; }
+    .settings-options { display: flex; gap: 1em; flex-wrap: wrap; }
+    .settings-radio, .settings-checkbox { margin-right: 0.5em; }
+    .settings-input { padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; }
+    .settings-save { background: #ff7043; color: #fff; border: none; border-radius: 8px; padding: 10px 28px; font-size: 1.1em; font-weight: bold; cursor: pointer; display: block; margin: 2em auto 0 auto; }
+    .settings-success { color: #388e3c; text-align: center; margin-top: 1em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo-placeholder">🕉️</div>
+          <div>
+            <div class="site-title">JoshiPanchang®</div>
+            <div class="site-tagline">Hindu Calendar for the world</div>
+          </div>
+        </div>
+        <div class="search-section">
+          <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search Joshi Panchang">
+            <button class="search-button">🔍</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="app-buttons">
+            <a href="#" class="app-button">📱</a>
+            <a href="#" class="app-button">🍎</a>
+          </div>
+          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../panchang/">Panchang</a></li>
+        <li><a href="../calendar/">Calendars</a></li>
+        <li><a href="../muhurat/">Muhurat</a></li>
+        <li><a href="../vrat/">Vrat & Upavas</a></li>
+        <li><a href="../festivals/">Festivals</a></li>
+        <li><a href="../jyotish/">Jyotish</a></li>
+        <li><a href="../planets/">Planets</a></li>
+        <li><a href="../lyrics/">Lyrics</a></li>
+        <li><a href="../gallery/">Gallery</a></li>
+        <li><a href="../others/">Others</a></li>
+        <li><a href="../settings/">Settings</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="settings-container">
+        <h1 class="settings-title">Settings</h1>
+        <form id="settings-form">
+          <div class="settings-section">
+            <label class="settings-label">Language</label>
+            <div class="settings-options">
+              <label><input type="radio" name="language" value="en" class="settings-radio"> English</label>
+              <label><input type="radio" name="language" value="hi" class="settings-radio"> Hindi</label>
+              <label><input type="radio" name="language" value="gu" class="settings-radio"> Gujarati</label>
+              <label><input type="radio" name="language" value="mr" class="settings-radio"> Marathi</label>
+            </div>
+          </div>
+          <div class="settings-section">
+            <label class="settings-label">Location</label>
+            <input type="text" name="location" class="settings-input" placeholder="Enter your city (e.g., New Delhi, India)">
+          </div>
+          <div class="settings-section">
+            <label class="settings-label">Time Format</label>
+            <div class="settings-options">
+              <label><input type="radio" name="timeformat" value="12" class="settings-radio"> 12-hour</label>
+              <label><input type="radio" name="timeformat" value="24" class="settings-radio"> 24-hour</label>
+            </div>
+          </div>
+          <div class="settings-section">
+            <label class="settings-label">Theme</label>
+            <div class="settings-options">
+              <label><input type="radio" name="theme" value="light" class="settings-radio"> Light</label>
+              <label><input type="radio" name="theme" value="dark" class="settings-radio"> Dark</label>
+            </div>
+          </div>
+          <button type="submit" class="settings-save">Save Settings</button>
+          <div id="settings-success" class="settings-success" style="display:none;">Settings saved!</div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    // Load settings from localStorage
+    function loadSettings() {
+      const settings = JSON.parse(localStorage.getItem('jp_settings') || '{}');
+      if(settings.language) document.querySelector(`[name=language][value=${settings.language}]`).checked = true;
+      if(settings.location) document.querySelector('[name=location]').value = settings.location;
+      if(settings.timeformat) document.querySelector(`[name=timeformat][value="${settings.timeformat}"]`).checked = true;
+      if(settings.theme) document.querySelector(`[name=theme][value=${settings.theme}]`).checked = true;
+    }
+    // Save settings to localStorage
+    document.getElementById('settings-form').onsubmit = function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const settings = {
+        language: form.language.value,
+        location: form.location.value,
+        timeformat: form.timeformat.value,
+        theme: form.theme.value
+      };
+      localStorage.setItem('jp_settings', JSON.stringify(settings));
+      document.getElementById('settings-success').style.display = 'block';
+      setTimeout(()=>{document.getElementById('settings-success').style.display = 'none';}, 1800);
+    };
+    loadSettings();
+  </script>
+</body>
+</html> 
