@@ -1,0 +1,1071 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f1e8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  background: #FFD700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #8B4513;
+  font-size: 14px;
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.site-tagline {
+  font-size: 14px;
+  color: #FFE4B5;
+  margin-top: 2px;
+}
+
+.search-section {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FF6B35;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.app-button {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Navigation */
+nav {
+  background: #654321;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 15px 20px;
+  color: #FFE4B5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  background: #8B4513;
+  color: #FFD700;
+  border-bottom-color: #FFD700;
+}
+
+/* Main content area */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Zodiac signs grid */
+.zodiac-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.zodiac-item {
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-width: 80px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.zodiac-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  background: #FFDAB9;
+}
+
+.zodiac-symbol {
+  margin-bottom: 5px;
+}
+
+.zodiac-symbol img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
+}
+
+.zodiac-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #654321;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.zodiac-english {
+  font-size: 10px;
+  color: #666;
+  line-height: 1.2;
+}
+
+/* Hero section */
+.hero-section {
+  text-align: center;
+  margin: 40px 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border-radius: 15px;
+  border: 3px solid #8B4513;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "🪔";
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #B22222;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Social media section */
+.social-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.social-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+}
+
+.social-x {
+  background: #000;
+}
+
+.social-facebook {
+  background: #1877F2;
+}
+
+.social-share {
+  background: #25D366;
+}
+
+/* Current date section */
+.date-section {
+  background: #556B2F;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.moon-icon {
+  font-size: 32px;
+}
+
+.date-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.date-details p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.current-date {
+  text-align: right;
+}
+
+.current-date .day {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.current-date .month-year {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.current-date .weekday {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Location input */
+.location-section {
+  background: #FFE4B5;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 2px solid #8B4513;
+}
+
+.location-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.location-icon {
+  color: #B22222;
+  font-size: 20px;
+}
+
+.location-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #8B4513;
+  border-radius: 25px;
+  font-size: 16px;
+  background: white;
+}
+
+/* Footer */
+footer {
+  background: #654321;
+  color: #FFE4B5;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Panchang details */
+.panchang-details {
+  margin: 30px 0;
+}
+
+.panchang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.panchang-item {
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panchang-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+  background: #FFDAB9;
+}
+
+.panchang-item h3 {
+  color: #8B4513;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.panchang-item p {
+  color: #654321;
+  font-size: 16px;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.panchang-item p:last-child {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Festivals grid */
+.festivals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.festival-item {
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.festival-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+  background: linear-gradient(135deg, #FFDAB9, #FFE4B5);
+}
+
+.festival-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.festival-item h3 {
+  color: #8B4513;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.festival-date {
+  color: #B22222;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.festival-description {
+  color: #654321;
+  font-size: 14px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Jyotish sections */
+.jyotish-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.jyotish-item {
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jyotish-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+  background: linear-gradient(135deg, #FFDAB9, #FFE4B5);
+}
+
+.jyotish-item h3 {
+  color: #8B4513;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.jyotish-item p {
+  color: #654321;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.jyotish-button {
+  background: #8B4513;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.jyotish-button:hover {
+  background: #A0522D;
+  transform: scale(1.05);
+}
+
+/* Calendar types */
+.calendar-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.calendar-item {
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+  background: linear-gradient(135deg, #FFDAB9, #FFE4B5);
+}
+
+.calendar-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.calendar-item h3 {
+  color: #8B4513;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.calendar-item p {
+  color: #654321;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.calendar-button {
+  background: #8B4513;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.calendar-button:hover {
+  background: #A0522D;
+  transform: scale(1.05);
+}
+
+/* Current month calendar */
+.current-month {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.current-month h2 {
+  color: #8B4513;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.month-calendar {
+  background: white;
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #8B4513;
+  color: white;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.calendar-header div {
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #8B4513;
+}
+
+.day {
+  background: white;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.day:hover {
+  background: #FFE4B5;
+}
+
+.day.current {
+  background: #8B4513;
+  color: white;
+}
+
+.day.prev-month,
+.day.next-month {
+  color: #ccc;
+  background: #f9f9f9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-section {
+    max-width: 100%;
+    margin: 15px 0;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .zodiac-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .date-section {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .current-date {
+    text-align: center;
+  }
+}
+
+/* Decorative borders */
+.content-wrapper {
+  position: relative;
+}
+
+.content-wrapper::before,
+.content-wrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #8B4513,
+    #8B4513 10px,
+    #FFE4B5 10px,
+    #FFE4B5 20px
+  );
+  z-index: -1;
+}
+
+.content-wrapper::before {
+  left: 0;
+}
+
+.content-wrapper::after {
+  right: 0;
+} 
+
+/* Rashifal page styles */
+.rashifal-header {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border-radius: 15px;
+  border: 2px solid #8B4513;
+}
+
+.rashifal-title {
+  color: #8B4513;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.rashifal-date {
+  color: #654321;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Timeframe navigation */
+.timeframe-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.timeframe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px;
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.timeframe-item:hover {
+  background: #FFDAB9;
+  transform: translateY(-2px);
+}
+
+.timeframe-item.active {
+  background: #8B4513;
+  color: white;
+}
+
+.timeframe-letter {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeframe-text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Date navigation */
+.date-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.date-item:hover {
+  background: #FFDAB9;
+  transform: translateY(-2px);
+}
+
+.date-item.active {
+  background: #8B4513;
+  color: white;
+}
+
+.date-arrow {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.date-icon {
+  font-size: 20px;
+}
+
+.date-day {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.date-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Language navigation */
+.language-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  padding: 10px 20px;
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 25px;
+  color: #654321;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  background: #FFDAB9;
+  transform: scale(1.05);
+}
+
+.lang-btn.active {
+  background: #8B4513;
+  color: white;
+}
+
+/* Rashifal subtitle */
+.rashifal-subtitle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.rashifal-subtitle h2 {
+  color: #8B4513;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Rashifal content */
+.rashifal-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.rashifal-symbol {
+  text-align: center;
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.rashifal-symbol img {
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+}
+
+.symbol-text {
+  color: #654321;
+  font-style: italic;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.rashifal-details {
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+/* Chandrabalam */
+.chandrabalam {
+  background: #8B4513;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.moon-icon {
+  font-size: 24px;
+}
+
+.chandrabalam-text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.chandrabalam-time {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Daily prediction */
+.daily-prediction {
+  margin-bottom: 25px;
+}
+
+.daily-prediction h3 {
+  color: #8B4513;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.daily-prediction p {
+  color: #654321;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Past event */
+.past-event {
+  background: #FFDAB9;
+  border: 1px solid #8B4513;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.saturn-icon {
+  font-size: 20px;
+}
+
+.event-title {
+  color: #8B4513;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.past-event p {
+  color: #654321;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Remedies */
+.remedies h3 {
+  color: #8B4513;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.remedies p {
+  color: #654321;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Nebula section */
+.nebula-section {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: #FFE4B5;
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+}
+
+.nebula-section h3 {
+  color: #8B4513;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.chart-placeholder {
+  font-size: 48px;
+  color: #8B4513;
+}
+
+/* Responsive design for rashifal */
+@media (max-width: 768px) {
+  .rashifal-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .timeframe-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .date-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .language-nav {
+    gap: 5px;
+  }
+  
+  .lang-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+} 

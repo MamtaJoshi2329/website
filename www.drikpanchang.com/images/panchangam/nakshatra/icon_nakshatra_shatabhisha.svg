@@ -1,0 +1,14 @@
+<svg width="100" height="100" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1" viewBox="0 0 2646.9 2646.9" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil1 {fill:#AE0000;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g transform="scale(3.125)">
+  <rect class="fil0" width="100" height="100"/>
+  <path class="fil1" d="m423 681c13 0 24 11 24 24s-11 24-24 24-23-11-23-24 10-24 23-24zm0-551c13 0 24 11 24 24s-11 24-24 24-23-11-23-24 10-24 23-24zm171 298c0 94-76 171-171 171-151 0-229-184-121-292s292-31 292 121zm-171-349c-61 0-97 72-58 121-32 9-62 23-87 44l-38-41c14 0 44 3 43-26 0-15-66-124-78-145-16-29-60-5-44 24l54 97h-32c-24 1-33 28-19 43l78 83c-68 83-71 202-8 288l-81 76c-6 5-8 11-9 18-1 30 37 28 67 33l-86 91c-23 24 14 59 37 35l118-125 7-14c6-32-36-32-62-36l44-41c28 25 62 43 98 52-25 29-24 73 3 101 67 68 172-30 109-101 37-9 71-27 99-52l44 41-42 7c-17 3-26 21-18 37l123 131c23 24 60-11 37-35l-87-91 46-8c21-3 29-29 13-43l-82-76c64-86 61-205-7-288l77-83c5-5 7-12 7-18-1-31-37-25-57-25l54-97c16-29-28-53-44-24-13 21-78 131-79 145 0 29 30 26 44 26l-38 41c-26-21-55-35-87-44 39-48 3-121-59-121z"/>
+ </g>
+</svg>

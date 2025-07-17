@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8.4666mm" height="8.4666mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 847 847">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil0 {fill:none}
+    .fil2 {fill:#FEFEFE}
+    .fil7 {fill:#D9DADA}
+    .fil4 {fill:#C5C6C6}
+    .fil3 {fill:#E31E24}
+    .fil6 {fill:#31243E}
+    .fil5 {fill:#403553}
+    .fil1 {fill:#2B2A29;fill-opacity:0.200000}
+    .fnt0 {font-weight:bold;font-size:95.8px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_247296296">
+   <rect class="fil0" width="847" height="847"/>
+   <path class="fil1" d="M115 116l643 0c11,0 20,9 20,20l0 640c0,11 -9,20 -20,20l-643 0c-11,0 -20,-9 -20,-20l0 -640c0,-11 9,-20 20,-20z"/>
+   <rect class="fil2" x="68" y="90" width="683" height="680" rx="15" ry="20"/>
+   <path class="fil3" d="M89 90l642 0c12,0 21,9 21,20l0 191 -683 0 0 -191c0,-11 9,-20 20,-20z"/>
+   <rect class="fil4" x="68" y="301" width="683.321" height="20.6272"/>
+   <circle class="fil5" cx="176" cy="162" r="26"/>
+   <circle class="fil6" cx="176" cy="159" r="18"/>
+   <rect class="fil2" x="162" y="50" width="27.2085" height="119.321" rx="14" ry="14"/>
+   <circle class="fil5" cx="270" cy="162" r="26"/>
+   <circle class="fil6" cx="270" cy="159" r="18"/>
+   <rect class="fil2" x="256" y="50" width="27.2085" height="119.321" rx="14" ry="14"/>
+   <circle class="fil5" cx="550" cy="162" r="26"/>
+   <circle class="fil6" cx="550" cy="159" r="18"/>
+   <rect class="fil2" x="537" y="50" width="27.2085" height="119.321" rx="14" ry="14"/>
+   <circle class="fil5" cx="644" cy="162" r="26"/>
+   <circle class="fil6" cx="644" cy="159" r="18"/>
+   <rect class="fil2" x="631" y="50" width="27.2085" height="119.321" rx="14" ry="14"/>
+   <text x="268" y="272"  class="fil2 fnt0">APRIL</text>
+   <path class="fil7" d="M293 360l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62zm87 0l62 0 0 62 -62 0 0 -62zm87 0l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62z"/>
+   <path class="fil7" d="M119 452l62 0 0 62 -62 0 0 -62zm87 0l62 0 0 62 -62 0 0 -62zm87 0l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62zm87 0l62 0 0 62 -62 0 0 -62zm87 0l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62z"/>
+   <path class="fil7" d="M119 544l62 0 0 62 -62 0 0 -62zm87 0l62 0 0 62 -62 0 0 -62zm87 0l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62zm87 0l62 0 0 62 -62 0 0 -62zm87 0l61 0 0 62 -61 0 0 -62zm86 0l62 0 0 62 -62 0 0 -62z"/>
+   <path class="fil7" d="M119 636l62 0 0 61 -62 0 0 -61zm87 0l62 0 0 61 -62 0 0 -61zm87 0l61 0 0 61 -61 0 0 -61zm86 0l62 0 0 61 -62 0 0 -61zm87 0l62 0 0 61 -62 0 0 -61z"/>
+   <path class="fil7" d="M752 631c-13,21 -36,32 -75,38 -24,58 -87,75 -112,75l-470 -4c-10,0 -18,-1 -27,-79l0 75 0 14c0,11 10,20 21,20l642 0c12,0 21,-9 21,-20l0 -119z"/>
+  </g>
+ </g>
+</svg>

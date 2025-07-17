@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30px" height="30px" version="1.0"
+     shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 20000 20000">
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect fill="none" width="20000" height="20000"/>
+  <g id="_880375840">
+   <rect fill="#FADE7E" stroke="#952420" stroke-width="700.045" x="2134" y="2134" width="15732" height="15732" rx="472" ry="472"/>
+   <line fill="none" stroke="#952420" stroke-width="700.045" x1="2273" y1="17727" x2="17727" y2= "2273" />
+   <line fill="none" stroke="#952420" stroke-width="700.045" x1="2273" y1="2293" x2="17707" y2= "17727" />
+   <polygon fill="none" stroke="#952420" stroke-width="700.045" points="10000,17707 2293,10000 10000,2293 17707,10000 "/>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ rashi }} Rashifal | Horoscope</title>
+    <style>
+        body {
+            background: #f6e3c2;
+            color: #4e260e;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .main-container {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            background: #fff8e1;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(78,38,14,0.10);
+            padding: 32px 24px 32px 24px;
+        }
+        .rashi-img-bg {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 18px auto;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffb300 60%, #e65100 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px rgba(255,112,67,0.10);
+        }
+        .rashi-img-bg img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #fff;
+            object-fit: cover;
+        }
+        .rashi-title {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #d84315;
+            margin-bottom: 0.2em;
+        }
+        .rashi-title-hi {
+            text-align: center;
+            font-size: 1.2em;
+            color: #6d4c41;
+            margin-bottom: 0.5em;
+        }
+        .rashi-date {
+            text-align: center;
+            color: #8d6e63;
+            font-size: 1.1em;
+            margin-bottom: 0.7em;
+        }
+        .location-bar {
+            text-align: center;
+            margin-bottom: 1.2em;
+        }
+        .location-bar select {
+            font-size: 1em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #e65100;
+            background: #fffde7;
+            color: #4e260e;
+        }
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5em;
+        }
+        .category-tab {
+            padding: 8px 18px;
+            background: #ffe0b2;
+            color: #d84315;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 1em;
+            margin: 0 2px;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.15s;
+            text-decoration: none;
+        }
+        .category-tab.active {
+            background: #ff7043;
+            color: #fff;
+        }
+        .lang-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.2em;
+        }
+        .lang-tab {
+            padding: 8px 24px;
+            background: #ffe0b2;
+            color: #d84315;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 1em;
+            margin: 0 2px;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.15s;
+            text-decoration: none;
+        }
+        .lang-tab.active {
+            background: #ff7043;
+            color: #fff;
+        }
+        .rashifal-card {
+            background: #ff7043;
+            color: #fff;
+            border-radius: 12px;
+            padding: 24px 18px;
+            font-size: 1.13em;
+            box-shadow: 0 2px 12px rgba(255,112,67,0.10);
+            margin-bottom: 1.5em;
+            min-height: 80px;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #d84315;
+            background: none;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.08em;
+            transition: color 0.15s;
+        }
+        .back-link:hover {
+            color: #ff7043;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="rashi-img-bg">
+            <img src="{{ url_for('static', filename='rashifal/' + img) }}" alt="{{ rashi }} icon" />
+        </div>
+        <div class="rashi-title">{{ rashi }} Rashifal</div>
+        <div class="rashi-title-hi">{{ rashi_hi }} राशिफल</div>
+        <div class="rashi-date">{{ now.strftime('%A, %B %d, %Y') }}</div>
+        <div class="location-bar">
+            <label for="location">Location:</label>
+            <select id="location" name="location" disabled>
+                <option selected>New Delhi, India</option>
+            </select>
+        </div>
+        <div class="category-tabs">
+            {% for cat in categories %}
+            <a href="/rashifal/{{ rashi }}/{{ cat }}/{{ lang }}" class="category-tab{% if cat == category %} active{% endif %}">{{ cat.capitalize() }}</a>
+            {% endfor %}
+        </div>
+        <div class="lang-tabs">
+            {% for l in languages %}
+            <a href="/rashifal/{{ rashi }}/{{ category }}/{{ l }}" class="lang-tab{% if l == lang %} active{% endif %}">{{ lang_labels[l] }}</a>
+            {% endfor %}
+        </div>
+        <div class="rashifal-card">{{ rashifal_text }}</div>
+        <!-- Placeholder for Chandrabalam, remedies, etc. -->
+        <div style="margin: 1.5em 0; color: #8d6e63; text-align: center; font-size: 1em;">
+            <em>Chandrabalam, remedies, and other info can be shown here.</em>
+        </div>
+        <a class="back-link" href="/">&#8592; Back to Rashis</a>
+    </div>
+</body>
+</html> 

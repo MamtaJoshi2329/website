@@ -1,0 +1,27 @@
+<svg width="600" height="600" version="1.1" viewBox="0 0 158.75 158.75" xmlns="http://www.w3.org/2000/svg">
+ <rect y="-1.9762e-14" width="158.75" height="158.75" fill="none" stroke-width=".26399"/>
+<defs>
+ <style type="text/css">
+  <![CDATA[
+   .fil0 {fill:none}
+   .fil1 {fill:#AE0000;fill-rule:nonzero}
+  ]]>
+ </style>
+</defs>
+<g>
+ <g stroke-miterlimit="0" stroke-width="0" class="fil1">
+  <circle cx="55.093" cy="61.711" r="12.703" style="paint-order:markers fill stroke"/>
+  <circle cx="45.169" cy="142.46" r="12.703" style="paint-order:markers fill stroke"/>
+  <circle cx="87.82" cy="126.29" r="12.703" style="paint-order:markers fill stroke"/>
+  <circle cx="92.741" cy="44.743" r="12.703" style="paint-order:markers fill stroke"/>
+  <circle cx="124.42" cy="15.767" r="12.703" style="paint-order:markers fill stroke"/>
+ </g>
+ <g fill-rule="evenodd" class="fil1">
+  <rect transform="matrix(.10386 -.99459 .99832 .057869 0 0)" x="-148.17" y="55.309" width="83.582" height="8.6282" stroke-width=".059899"/>
+  <rect transform="matrix(.89607 -.44392 .56268 .82667 0 0)" x="7.4261" y="76.851" width="47.086" height="9.7895" stroke-width=".047888"/>
+  <rect transform="matrix(.71671 -.69737 .79574 .60564 0 0)" x="12.208" y="94.679" width="54.861" height="8.8862" stroke-width=".049249"/>
+  <rect transform="matrix(.10816 -.99413 .99922 .039576 0 0)" x="-113.17" y="95.53" width="63.021" height="9.0738" stroke-width=".053338"/>
+  <rect transform="matrix(.91454 -.40449 .3052 .95229 0 0)" x="-5.1458" y="145.45" width="56.044" height="8.9389" stroke-width=".049924"/>
+ </g>
+</g>
+</svg>

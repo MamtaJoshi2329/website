@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8.4666mm" height="8.4666mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 847 847">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil3 {fill:#9D9E9E}
+    .fil7 {fill:#2B2A29}
+    .fil6 {fill:#E31E24}
+    .fil2 {fill:#8C291F}
+    .fil5 {fill:#062752}
+    .fil4 {fill:white}
+    .fil1 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="423.34" y1="42.32" x2="423.34" y2="804.32">
+   <stop offset="0" style="stop-opacity:1; stop-color:#E31E24"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#960F00"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_498298568">
+   <rect class="fil0" width="847" height="847"/>
+   <circle class="fil1" cx="423" cy="423" r="381"/>
+   <circle class="fil2" cx="423" cy="423" r="340"/>
+   <circle class="fil3" cx="423" cy="423" r="326"/>
+   <circle class="fil4" cx="423" cy="423" r="292"/>
+   <polygon class="fil5" points="423,423 427,394 367,258 286,135 281,137 328,277 399,408 "/>
+   <polygon class="fil5" points="639,507 562,458 452,418 423,423 441,447 547,494 637,512 "/>
+   <polygon class="fil6" points="488,340 465,386 344,542 243,656 328,529 449,374 "/>
+   <circle class="fil5" transform="matrix(0.388899 -0.0694602 0.0694602 0.388899 423.453 423.013)" r="89"/>
+   <rect class="fil7" x="409" y="103" width="28.6435" height="71.7383"/>
+   <rect class="fil7" transform="matrix(2.37214E-014 -0.670278 1.00898 1.99978E-014 103.445 433.849)" width="31.98" height="71.1"/>
+   <rect class="fil7" x="409" y="671" width="28.6435" height="71.7383"/>
+   <rect class="fil7" transform="matrix(-7.11641E-014 0.670278 -1.00898 -5.99933E-014 743.471 412.178)" width="31.98" height="71.1"/>
+  </g>
+ </g>
+</svg>

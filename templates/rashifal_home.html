@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashifal | Daily Horoscope</title>
+    <style>
+        body {
+            background: #1a237e;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(90deg, #ffb300 0%, #ff7043 100%);
+            color: #1a237e;
+            padding: 32px 0 16px 0;
+            text-align: center;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        .header p {
+            margin: 8px 0 0 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .rashis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 28px;
+            max-width: 900px;
+            margin: 48px auto 0 auto;
+            padding: 0 24px;
+        }
+        .rashi-card {
+            background: #fffde7;
+            color: #1a237e;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(26,35,126,0.08);
+            text-align: center;
+            padding: 32px 12px 24px 12px;
+            font-size: 1.15em;
+            font-weight: 500;
+            transition: transform 0.15s, box-shadow 0.15s;
+            text-decoration: none;
+            border: 2px solid #ffb300;
+        }
+        .rashi-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(255,112,67,0.18);
+            border-color: #ff7043;
+        }
+        .footer {
+            margin: 48px 0 16px 0;
+            text-align: center;
+            color: #ffb300;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Rashifal</h1>
+        <p>Daily Horoscope | आज का राशिफल</p>
+    </div>
+    <div class="rashis-grid">
+        {% for rashi in rashis %}
+        <a class="rashi-card" href="/rashifal/{{ rashi.en }}">
+            <img src="{{ url_for('static', filename='rashifal/' + rashi.img) }}" alt="{{ rashi.en }} icon" style="width:56px; height:56px; border-radius:50%; margin-bottom:0.3em; background:#fff;" />
+            <div style="font-weight:600;">{{ rashi.en }}</div>
+            <div style="font-size:1.1em; color:#ff7043; margin-top:2px;">{{ rashi.hi }}</div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="footer">&copy; 2025 Rashifal | Inspired by Indian tradition</div>
+</body>
+</html> 

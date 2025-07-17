@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100px" height="100px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 100 100">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil1 {fill:#AE0000;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_2">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_350680936">
+   <rect class="fil0" width="100" height="100"/>
+   <path class="fil1" d="M50 6c39,0 58,48 31,75 -10,10 -25,15 -39,12 -7,-1 -11,-3 -17,-7 -22,-15 -26,-48 -6,-67 8,-8 19,-13 31,-13zm2 15c-15,0 -25,15 -19,28 0,2 3,7 4,7 13,13 36,4 36,-15 0,-11 -10,-20 -21,-20zm-5 49l-7 14c5,1 11,2 16,1l-3 -15 -6 0zm-15 -7l-11 8 4 4 7 6 6 -14 -6 -4zm0 -42c-16,9 -21,27 -15,43l11 -7c-8,-11 -6,-26 4,-36zm29 48l2 14c15,-6 21,-18 21,-33 0,-7 -2,-13 -5,-18 5,15 -3,32 -18,37z"/>
+  </g>
+ </g>
+</svg>

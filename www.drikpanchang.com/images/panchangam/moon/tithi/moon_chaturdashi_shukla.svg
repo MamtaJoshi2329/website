@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8.4666mm" height="8.4666mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 847 847">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil1 {fill:#3E3E3E}
+    .fil2 {fill:#F8F8FF}
+   ]]>
+  </style>
+ </defs>
+ <g>
+  <g>
+   <rect class="fil0" width="847" height="847"/>
+   <circle class="fil1" cx="423" cy="423" r="402"/>
+   <path class="fil2" d="M444 803l1 0c199,-11 358,-177 358,-380 0,-202 -159,-368 -358,-379l-1 0c-199,11 -358,177 -358,379 0,203 159,369 358,380z"/>
+  </g>
+ </g>
+</svg>
