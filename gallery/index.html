@@ -120,12 +120,15 @@
         let filtered = currentCategory==='All' ? galleryData : galleryData.filter(img => img.category===currentCategory);
         grid.innerHTML = filtered.map(img => {
           let caption = img['caption_' + currentLang] || img.caption_en;
-          let imgTag = img.src ? `<img src="${img.src}" alt="${caption}" class="gallery-img" onclick="openLightbox('${img.src}','${caption}')">` : '';
+          let imgTag = img.src
+            ? `<img src="${img.src}" alt="${caption}" class="gallery-img" onclick="openLightbox('${img.src}','${caption}')">`
+            : `<div class='gallery-img' style='display:flex;align-items:center;justify-content:center;height:140px;background:#ffe0b2;color:#bdbdbd;font-size:1.1em;border:1px dashed #e0c080;'>No Image</div>`;
           return `<div class="gallery-item">${imgTag}<div class="gallery-caption">${caption}</div></div>`;
         }).join('');
       }
       function switchLang(lang) {
         currentLang = lang;
+        localStorage.setItem('jp_lang', lang);
         // Update all data-en/data-hi elements
         document.querySelectorAll('[data-en]').forEach(function(el) {
           el.textContent = el.getAttribute('data-' + lang);
@@ -149,7 +152,9 @@
       // Initial render
       renderCategories();
       renderGallery();
-      switchLang('en');
+      // Set language from localStorage or default to English
+      const savedLang = localStorage.getItem('jp_lang') || 'en';
+      switchLang(savedLang);
       </script>
     </main>
     <footer>
