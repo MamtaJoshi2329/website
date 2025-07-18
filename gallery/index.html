@@ -22,7 +22,7 @@
           <div class="logo-placeholder">🕉️</div>
           <div>
             <div class="site-title">JoshiPanchang®</div>
-            <div class="site-tagline">Hindu Calendar for the world</div>
+            <div class="site-tagline" data-en="Hindu Calendar for the world" data-hi="दुनिया के लिए हिन्दू कैलेंडर">Hindu Calendar for the world</div>
           </div>
         </div>
         <div class="search-section">
@@ -36,28 +36,31 @@
             <a href="#" class="app-button">📱</a>
             <a href="#" class="app-button">🍎</a>
           </div>
-          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
+          <div class="lang-switcher" style="display:inline-block; margin-left:12px;">
+            <button onclick="switchLang('en')" style="margin-right:4px; padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">En</button>
+            <button onclick="switchLang('hi')" style="padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">हि</button>
+          </div>
         </div>
       </div>
     </header>
     <nav>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../panchang/">Panchang</a></li>
-        <li><a href="../calendar/">Calendars</a></li>
-        <li><a href="../muhurat/">Muhurat</a></li>
-        <li><a href="../vrat/">Vrat & Upavas</a></li>
-        <li><a href="../festivals/">Festivals</a></li>
-        <li><a href="../jyotish/">Jyotish</a></li>
-        <li><a href="../planets/">Planets</a></li>
-        <li><a href="../lyrics/">Lyrics</a></li>
-        <li><a href="../gallery/">Gallery</a></li>
-        <li><a href="../others/">Others</a></li>
+        <li><a href="../index.html" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="../panchang/" data-en="Panchang" data-hi="पंचांग">Panchang</a></li>
+        <li><a href="../calendar/" data-en="Calendars" data-hi="कैलेंडर">Calendars</a></li>
+        <li><a href="../muhurat/" data-en="Muhurat" data-hi="मुहूर्त">Muhurat</a></li>
+        <li><a href="../vrat/" data-en="Vrat & Upavas" data-hi="व्रत और उपवास">Vrat & Upavas</a></li>
+        <li><a href="../festivals/" data-en="Festivals" data-hi="त्योहार">Festivals</a></li>
+        <li><a href="../jyotish/" data-en="Jyotish" data-hi="ज्योतिष">Jyotish</a></li>
+        <li><a href="../planets/" data-en="Planets" data-hi="ग्रह">Planets</a></li>
+        <li><a href="../lyrics/" data-en="Lyrics" data-hi="गीत">Lyrics</a></li>
+        <li><a href="../gallery/" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+        <li><a href="../others/" data-en="Others" data-hi="अन्य">Others</a></li>
       </ul>
     </nav>
     <main>
       <div class="gallery-container">
-        <h1 class="gallery-title">Photo Gallery</h1>
+        <h1 class="gallery-title" data-en="Photo Gallery" data-hi="फोटो गैलरी">Photo Gallery</h1>
         <div class="gallery-categories" id="gallery-categories"></div>
         <div class="gallery-grid" id="gallery-grid"></div>
       </div>
@@ -72,26 +75,33 @@
         <div id="lightbox-caption" style="color:#fff; margin-top:1em; font-size:1.1em;"></div>
       </div>
       <script>
-      // Example gallery data
+      // Example gallery data with English and Hindi captions
       const galleryData = [
-        { src: '../static/rashifal/aries.png', caption: 'Aries Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/taurus.png', caption: 'Taurus Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/leo.png', caption: 'Leo Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/capricorn.png', caption: 'Capricorn Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/pisces.png', caption: 'Pisces Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/libra.png', caption: 'Libra Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/aquarius.png', caption: 'Aquarius Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/cancer.png', caption: 'Cancer Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/scorpio.png', caption: 'Scorpio Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/sagittarius.png', caption: 'Sagittarius Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/gemini.png', caption: 'Gemini Symbol', category: 'Zodiac' },
-        { src: '../static/rashifal/virgo.png', caption: 'Virgo Symbol', category: 'Zodiac' },
-        { src: '../static/gallery/deity1.jpg', caption: 'Lord Ganesha', category: 'Deities' },
-        { src: '../static/gallery/deity2.jpg', caption: 'Goddess Lakshmi', category: 'Deities' },
-        { src: '../static/gallery/festival1.jpg', caption: 'Diwali Festival', category: 'Festivals' },
-        { src: '../static/gallery/festival2.jpg', caption: 'Holi Festival', category: 'Festivals' },
-        { src: '../static/gallery/wallpaper1.jpg', caption: 'Spiritual Wallpaper', category: 'Wallpapers' },
-        { src: '../static/gallery/wallpaper2.jpg', caption: 'Temple Wallpaper', category: 'Wallpapers' }
+        { src: '../static/rashifal/aries.png', caption_en: 'Aries Symbol', caption_hi: 'मेष प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/taurus.png', caption_en: 'Taurus Symbol', caption_hi: 'वृषभ प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/leo.png', caption_en: 'Leo Symbol', caption_hi: 'सिंह प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/capricorn.png', caption_en: 'Capricorn Symbol', caption_hi: 'मकर प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/pisces.png', caption_en: 'Pisces Symbol', caption_hi: 'मीन प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/libra.png', caption_en: 'Libra Symbol', caption_hi: 'तुला प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/aquarius.png', caption_en: 'Aquarius Symbol', caption_hi: 'कुंभ प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/cancer.png', caption_en: 'Cancer Symbol', caption_hi: 'कर्क प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/scorpio.png', caption_en: 'Scorpio Symbol', caption_hi: 'वृश्चिक प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/sagittarius.png', caption_en: 'Sagittarius Symbol', caption_hi: 'धनु प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/gemini.png', caption_en: 'Gemini Symbol', caption_hi: 'मिथुन प्रतीक', category: 'Zodiac' },
+        { src: '../static/rashifal/virgo.png', caption_en: 'Virgo Symbol', caption_hi: 'कन्या प्रतीक', category: 'Zodiac' },
+        { src: '../static/gallery/deity1.jpg', caption_en: 'Lord Ganesha', caption_hi: 'भगवान गणेश', category: 'Deities' },
+        { src: '../static/gallery/deity2.jpg', caption_en: 'Goddess Lakshmi', caption_hi: 'देवी लक्ष्मी', category: 'Deities' },
+        { src: '../static/gallery/festival1.jpg', caption_en: 'Diwali Festival', caption_hi: 'दिवाली त्योहार', category: 'Festivals' },
+        { src: '../static/gallery/festival2.jpg', caption_en: 'Holi Festival', caption_hi: 'होली त्योहार', category: 'Festivals' },
+        { src: '../static/gallery/wallpaper1.jpg', caption_en: 'Spiritual Wallpaper', caption_hi: 'आध्यात्मिक वॉलपेपर', category: 'Wallpapers' },
+        { src: '../static/gallery/wallpaper2.jpg', caption_en: 'Temple Wallpaper', caption_hi: 'मंदिर वॉलपेपर', category: 'Wallpapers' },
+        // Example items with no image
+        { src: '', caption_en: 'No Image 1', caption_hi: 'कोई छवि नहीं 1', category: 'Wallpapers' },
+        { src: '', caption_en: 'No Image 2', caption_hi: 'कोई छवि नहीं 2', category: 'Wallpapers' },
+        { src: '', caption_en: 'No Image 3', caption_hi: 'कोई छवि नहीं 3', category: 'Wallpapers' },
+        { src: '', caption_en: 'No Image 4', caption_hi: 'कोई छवि नहीं 4', category: 'Wallpapers' },
+        { src: '', caption_en: 'No Image 5', caption_hi: 'कोई छवि नहीं 5', category: 'Wallpapers' },
+        { src: '', caption_en: 'No Image 6', caption_hi: 'कोई छवि नहीं 6', category: 'Wallpapers' }
       ];
       const categories = ['All', 'Zodiac', 'Deities', 'Festivals', 'Wallpapers'];
       let currentCategory = 'All';
@@ -104,15 +114,23 @@
         renderCategories();
         renderGallery();
       }
+      let currentLang = 'en';
       function renderGallery() {
         const grid = document.getElementById('gallery-grid');
         let filtered = currentCategory==='All' ? galleryData : galleryData.filter(img => img.category===currentCategory);
-        grid.innerHTML = filtered.map(img => `
-          <div class="gallery-item">
-            <img src="${img.src}" alt="${img.caption}" class="gallery-img" onclick="openLightbox('${img.src}','${img.caption}')">
-            <div class="gallery-caption">${img.caption}</div>
-          </div>
-        `).join('');
+        grid.innerHTML = filtered.map(img => {
+          let caption = img['caption_' + currentLang] || img.caption_en;
+          let imgTag = img.src ? `<img src="${img.src}" alt="${caption}" class="gallery-img" onclick="openLightbox('${img.src}','${caption}')">` : '';
+          return `<div class="gallery-item">${imgTag}<div class="gallery-caption">${caption}</div></div>`;
+        }).join('');
+      }
+      function switchLang(lang) {
+        currentLang = lang;
+        // Update all data-en/data-hi elements
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+        renderGallery();
       }
       function openLightbox(src, caption) {
         document.getElementById('lightbox-img').src = src;
@@ -131,10 +149,11 @@
       // Initial render
       renderCategories();
       renderGallery();
+      switchLang('en');
       </script>
     </main>
     <footer>
-      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+      <p data-en="© 2025 JoshiPanchang. All rights reserved." data-hi="© 2025 जोशीपंचांग. सर्वाधिकार सुरक्षित।">© 2025 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
 </body>

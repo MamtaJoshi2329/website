@@ -14,7 +14,7 @@
           <div class="logo-placeholder">🕉️</div>
           <div>
             <div class="site-title">JoshiPanchang®</div>
-            <div class="site-tagline">Hindu Calendar for the world</div>
+            <div class="site-tagline" data-en="Hindu Calendar for the world" data-hi="दुनिया के लिए हिन्दू कैलेंडर">Hindu Calendar for the world</div>
           </div>
         </div>
         
@@ -31,8 +31,8 @@
             <a href="#" class="app-button">🍎</a>
           </div>
           <div class="lang-switcher" style="display:inline-block; margin-left:12px;">
-            <button onclick="if(!window.location.pathname.includes('-hi')) window.location.href=window.location.pathname.replace('.html','-hi.html');" style="margin-right:4px; padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">हि</button>
-            <button onclick="window.location.href=window.location.pathname.replace('-hi','');" style="padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">En</button>
+            <button onclick="switchLang('en')" style="margin-right:4px; padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">En</button>
+            <button onclick="switchLang('hi')" style="padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">हि</button>
           </div>
         </div>
       </div>
@@ -40,17 +40,17 @@
 
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="panchang/">Panchang</a></li>
-        <li><a href="calendar/">Calendars</a></li>
-        <li><a href="muhurat/">Muhurat</a></li>
-        <li><a href="vrat/">Vrat & Upavas</a></li>
-        <li><a href="festivals/">Festivals</a></li>
-        <li><a href="jyotish/">Jyotish</a></li>
-        <li><a href="planets/">Planets</a></li>
-        <li><a href="lyrics/">Lyrics</a></li>
-        <li><a href="gallery/">Gallery</a></li>
-        <li><a href="others/">Others</a></li>
+        <li><a href="index.html" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="panchang/" data-en="Panchang" data-hi="पंचांग">Panchang</a></li>
+        <li><a href="calendar/" data-en="Calendars" data-hi="कैलेंडर">Calendars</a></li>
+        <li><a href="muhurat/" data-en="Muhurat" data-hi="मुहूर्त">Muhurat</a></li>
+        <li><a href="vrat/" data-en="Vrat & Upavas" data-hi="व्रत और उपवास">Vrat & Upavas</a></li>
+        <li><a href="festivals/" data-en="Festivals" data-hi="त्योहार">Festivals</a></li>
+        <li><a href="jyotish/" data-en="Jyotish" data-hi="ज्योतिष">Jyotish</a></li>
+        <li><a href="planets/" data-en="Planets" data-hi="ग्रह">Planets</a></li>
+        <li><a href="lyrics/" data-en="Lyrics" data-hi="गीत">Lyrics</a></li>
+        <li><a href="gallery/" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+        <li><a href="others/" data-en="Others" data-hi="अन्य">Others</a></li>
       </ul>
     </nav>
 
@@ -75,58 +75,58 @@
         </a>
         <a href="rashifal/vrishabha.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/taurus.png" alt="Taurus" width="24" height="24"></div>
-          <div class="zodiac-name">Vrishabha</div>
-          <div class="zodiac-english">Taurus</div>
+          <div class="zodiac-name" data-en="Vrishabha" data-hi="वृषभ">Vrishabha</div>
+          <div class="zodiac-english" data-en="Taurus" data-hi="वृष">Taurus</div>
         </a>
         <a href="rashifal/mithuna.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/gemini.png" alt="Gemini" width="24" height="24"></div>
-          <div class="zodiac-name">Mithuna</div>
-          <div class="zodiac-english">Gemini</div>
+          <div class="zodiac-name" data-en="Mithuna" data-hi="मिथुन">Mithuna</div>
+          <div class="zodiac-english" data-en="Gemini" data-hi="मिथुन">Gemini</div>
         </a>
         <a href="rashifal/karka.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/cancer.png" alt="Cancer" width="24" height="24"></div>
-          <div class="zodiac-name">Karka</div>
-          <div class="zodiac-english">Cancer</div>
+          <div class="zodiac-name" data-en="Karka" data-hi="कर्क">Karka</div>
+          <div class="zodiac-english" data-en="Cancer" data-hi="कर्क">Cancer</div>
         </a>
         <a href="rashifal/simha.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/leo.png" alt="Leo" width="24" height="24"></div>
-          <div class="zodiac-name">Simha</div>
-          <div class="zodiac-english">Leo</div>
+          <div class="zodiac-name" data-en="Simha" data-hi="सिंह">Simha</div>
+          <div class="zodiac-english" data-en="Leo" data-hi="सिंह">Leo</div>
         </a>
         <a href="rashifal/kanya.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/virgo.png" alt="Virgo" width="24" height="24"></div>
-          <div class="zodiac-name">Kanya</div>
-          <div class="zodiac-english">Virgo</div>
+          <div class="zodiac-name" data-en="Kanya" data-hi="कन्या">Kanya</div>
+          <div class="zodiac-english" data-en="Virgo" data-hi="कन्या">Virgo</div>
         </a>
         <a href="rashifal/tula.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/libra.png" alt="Libra" width="24" height="24"></div>
-          <div class="zodiac-name">Tula</div>
-          <div class="zodiac-english">Libra</div>
+          <div class="zodiac-name" data-en="Tula" data-hi="तुला">Tula</div>
+          <div class="zodiac-english" data-en="Libra" data-hi="तुला">Libra</div>
         </a>
         <a href="rashifal/vrishchika.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/scorpio.png" alt="Scorpio" width="24" height="24"></div>
-          <div class="zodiac-name">Vrishchika</div>
-          <div class="zodiac-english">Scorpio</div>
+          <div class="zodiac-name" data-en="Vrishchika" data-hi="वृश्चिक">Vrishchika</div>
+          <div class="zodiac-english" data-en="Scorpio" data-hi="वृश्चिक">Scorpio</div>
         </a>
         <a href="rashifal/dhanu.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/sagittarius.png" alt="Sagittarius" width="24" height="24"></div>
-          <div class="zodiac-name">Dhanu</div>
-          <div class="zodiac-english">Sagittarius</div>
+          <div class="zodiac-name" data-en="Dhanu" data-hi="धनु">Dhanu</div>
+          <div class="zodiac-english" data-en="Sagittarius" data-hi="धनु">Sagittarius</div>
         </a>
         <a href="rashifal/makar.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/capricorn.png" alt="Capricorn" width="24" height="24"></div>
-          <div class="zodiac-name">Makar</div>
-          <div class="zodiac-english">Capricorn</div>
+          <div class="zodiac-name" data-en="Makar" data-hi="मकर">Makar</div>
+          <div class="zodiac-english" data-en="Capricorn" data-hi="मकर">Capricorn</div>
         </a>
         <a href="rashifal/kumbha.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/aquarius.png" alt="Aquarius" width="24" height="24"></div>
-          <div class="zodiac-name">Kumbha</div>
-          <div class="zodiac-english">Aquarius</div>
+          <div class="zodiac-name" data-en="Kumbha" data-hi="कुंभ">Kumbha</div>
+          <div class="zodiac-english" data-en="Aquarius" data-hi="कुंभ">Aquarius</div>
         </a>
         <a href="rashifal/meena.html" class="zodiac-item">
           <div class="zodiac-symbol"><img src="static/rashifal/pisces.png" alt="Pisces" width="24" height="24"></div>
-          <div class="zodiac-name">Meena</div>
-          <div class="zodiac-english">Pisces</div>
+          <div class="zodiac-name" data-en="Meena" data-hi="मीन">Meena</div>
+          <div class="zodiac-english" data-en="Pisces" data-hi="मीन">Pisces</div>
         </a>
       </div>
 
@@ -156,14 +156,41 @@
     </main>
 
     <footer>
-      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+      <p data-en="© 2025 JoshiPanchang. All rights reserved." data-hi="© 2025 जोशीपंचांग. सर्वाधिकार सुरक्षित।">© 2025 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
   <script>
     function switchLang(lang) {
+      // Update all data-en/data-hi elements
       document.querySelectorAll('[data-en]').forEach(function(el) {
         el.textContent = el.getAttribute('data-' + lang);
       });
+      // Update the date box in the correct language
+      var today = new Date();
+      var days = {
+        en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        hi: ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार']
+      };
+      var months = {
+        en: [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+        ],
+        hi: [
+          'जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून',
+          'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'
+        ]
+      };
+      var day = today.getDate();
+      var month = months[lang][today.getMonth()];
+      var year = today.getFullYear();
+      var dayName = days[lang][today.getDay()];
+      var dateNumberElem = document.getElementById('date-number');
+      var dateMonthElem = document.getElementById('date-month');
+      var dateDayElem = document.getElementById('date-day');
+      if (dateNumberElem) dateNumberElem.textContent = day;
+      if (dateMonthElem) dateMonthElem.textContent = month + ' ' + year;
+      if (dateDayElem) dateDayElem.textContent = dayName;
     }
     // Search bar functionality
     function handleSearch(query) {
@@ -203,24 +230,7 @@
 
     // Set today's date dynamically in the green date box
     document.addEventListener('DOMContentLoaded', function() {
-      var today = new Date();
-      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      var months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-      ];
-      var day = today.getDate();
-      var month = months[today.getMonth()];
-      var year = today.getFullYear();
-      var dayName = days[today.getDay()];
-
-      var dateNumberElem = document.getElementById('date-number');
-      var dateMonthElem = document.getElementById('date-month');
-      var dateDayElem = document.getElementById('date-day');
-
-      if (dateNumberElem) dateNumberElem.textContent = day;
-      if (dateMonthElem) dateMonthElem.textContent = month + ' ' + year;
-      if (dateDayElem) dateDayElem.textContent = dayName;
+      switchLang('en');
     });
   </script>
 </body>
