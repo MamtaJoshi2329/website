@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Shiva Chalisa" data-hi="शिव चालीसा">Shiva Chalisa</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .chalisa-container { max-width: 700px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .chalisa-title { text-align: center; color: #d84315; margin-bottom: 1em; }
+    .deity-img { display: block; margin: 0 auto 1em auto; width: 96px; height: 96px; object-fit: contain; }
+    .chalisa-verses { font-size: 1.1em; line-height: 1.7; margin-bottom: 2em; }
+    .lang-btns { text-align: right; margin-bottom: 1em; }
+    .lang-btn { margin-left: 0.5em; padding: 0.3em 1em; border-radius: 6px; border: 1px solid #d84315; background: #fff; color: #d84315; cursor: pointer; font-weight: bold; }
+    .lang-btn.active { background: #d84315; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="chalisa-container">
+    <div class="lang-btns">
+      <button class="lang-btn" onclick="switchLang('en')">En</button>
+      <button class="lang-btn" onclick="switchLang('hi')">हि</button>
+    </div>
+    <h1 class="chalisa-title" data-en="Shiva Chalisa" data-hi="शिव चालीसा">Shiva Chalisa</h1>
+    <img src="../../static/lyrics/shiva.png" alt="Shiva" class="deity-img">
+    <div class="chalisa-verses">
+      <div class="lang-en">
+        <p><b>Shri Shiva Chalisa</b></p>
+        <p>Jai Girija Pati Din Dayala<br>
+Sada Karat Santan Pratipala..1..</p>
+<!-- Add all 40 verses here in English, following the same pattern -->
+      </div>
+      <div class="lang-hi" style="display:none">
+        <p><b>श्री शिव चालीसा</b></p>
+        <p>जय गिरिजा पति दीन दयाला<br>
+सदा करत सन्तन प्रतिपाला॥1॥</p>
+<!-- Add all 40 verses here in Hindi, following the same pattern -->
+      </div>
+    </div>
+  </div>
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.lang-btn' + (lang === 'hi' ? ':nth-child(2)' : ':nth-child(1)')).classList.add('active');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+      document.querySelectorAll('.lang-hi').forEach(el => el.style.display = lang === 'hi' ? '' : 'none');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-hi');
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      switchLang(localStorage.getItem('lang') || 'en');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Yantra Collection" data-hi="यन्त्र संग्रह">Yantra Collection</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .yantra-container { max-width: 900px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .yantra-title { text-align: center; color: #d84315; margin-bottom: 1.5em; }
+    .yantra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5em; }
+    .yantra-card { text-align: center; text-decoration: none; background: #fff; border-radius: 10px; box-shadow: 0 1px 6px #ffe082; padding: 1em 0.5em; transition: box-shadow 0.2s; }
+    .yantra-card:hover { box-shadow: 0 4px 16px #ffd54f; }
+    .yantra-img { width: 64px; height: 64px; object-fit: contain; margin-bottom: 0.5em; }
+    .lang-btns { text-align: right; margin-bottom: 1em; }
+    .lang-btn { margin-left: 0.5em; padding: 0.3em 1em; border-radius: 6px; border: 1px solid #d84315; background: #fff; color: #d84315; cursor: pointer; font-weight: bold; }
+    .lang-btn.active { background: #d84315; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="yantra-container">
+    <div class="lang-btns">
+      <button class="lang-btn" onclick="switchLang('en')">En</button>
+      <button class="lang-btn" onclick="switchLang('hi')">हि</button>
+    </div>
+    <h1 class="yantra-title" data-en="Yantra Collection" data-hi="यन्त्र संग्रह">Yantra Collection</h1>
+    <div class="yantra-grid">
+      <a class="yantra-card" href="#" data-en="Shri Yantra" data-hi="श्री यन्त्र">
+        <img src="../static/lyrics/shri-yantra.png" alt="Shri Yantra" class="yantra-img">
+        <div data-en="Shri Yantra" data-hi="श्री यन्त्र">Shri Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Hanuman Yantra" data-hi="हनुमान यन्त्र">
+        <img src="../static/lyrics/hanuman-yantra.png" alt="Hanuman Yantra" class="yantra-img">
+        <div data-en="Hanuman Yantra" data-hi="हनुमान यन्त्र">Hanuman Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Durga Yantra" data-hi="दुर्गा यन्त्र">
+        <img src="../static/lyrics/durga-yantra.png" alt="Durga Yantra" class="yantra-img">
+        <div data-en="Durga Yantra" data-hi="दुर्गा यन्त्र">Durga Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Ganesh Yantra" data-hi="गणेश यन्त्र">
+        <img src="../static/lyrics/ganesh-yantra.png" alt="Ganesh Yantra" class="yantra-img">
+        <div data-en="Ganesh Yantra" data-hi="गणेश यन्त्र">Ganesh Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Lakshmi Yantra" data-hi="लक्ष्मी यन्त्र">
+        <img src="../static/lyrics/lakshmi-yantra.png" alt="Lakshmi Yantra" class="yantra-img">
+        <div data-en="Lakshmi Yantra" data-hi="लक्ष्मी यन्त्र">Lakshmi Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Saraswati Yantra" data-hi="सरस्वती यन्त्र">
+        <img src="../static/lyrics/saraswati-yantra.png" alt="Saraswati Yantra" class="yantra-img">
+        <div data-en="Saraswati Yantra" data-hi="सरस्वती यन्त्र">Saraswati Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Kali Yantra" data-hi="काली यन्त्र">
+        <img src="../static/lyrics/kali-yantra.png" alt="Kali Yantra" class="yantra-img">
+        <div data-en="Kali Yantra" data-hi="काली यन्त्र">Kali Yantra</div>
+      </a>
+      <a class="yantra-card" href="#" data-en="Navagraha Yantra" data-hi="नवग्रह यन्त्र">
+        <img src="../static/lyrics/navagraha-yantra.png" alt="Navagraha Yantra" class="yantra-img">
+        <div data-en="Navagraha Yantra" data-hi="नवग्रह यन्त्र">Navagraha Yantra</div>
+      </a>
+      <!-- Add more yantras as needed -->
+    </div>
+  </div>
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.lang-btn' + (lang === 'hi' ? ':nth-child(2)' : ':nth-child(1)')).classList.add('active');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-hi');
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      switchLang(localStorage.getItem('lang') || 'en');
+    });
+  </script>
+</body>
+</html>
