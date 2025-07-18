@@ -138,9 +138,9 @@
           </div>
         </div>
         <div class="current-date">
-          <div class="day">17</div>
-          <div class="month-year">July 2025</div>
-          <div class="weekday">Thursday</div>
+          <div class="day" id="date-number"></div>
+          <div class="month-year" id="date-month"></div>
+          <div class="weekday" id="date-day"></div>
         </div>
       </div>
 
@@ -191,6 +191,28 @@
     document.querySelector('.search-button').addEventListener('click', function() {
       const input = document.querySelector('.search-input');
       handleSearch(input.value);
+    });
+
+    // Set today's date dynamically in the green date box
+    document.addEventListener('DOMContentLoaded', function() {
+      var today = new Date();
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      var day = today.getDate();
+      var month = months[today.getMonth()];
+      var year = today.getFullYear();
+      var dayName = days[today.getDay()];
+
+      var dateNumberElem = document.getElementById('date-number');
+      var dateMonthElem = document.getElementById('date-month');
+      var dateDayElem = document.getElementById('date-day');
+
+      if (dateNumberElem) dateNumberElem.textContent = day;
+      if (dateMonthElem) dateMonthElem.textContent = month + ' ' + year;
+      if (dateDayElem) dateDayElem.textContent = dayName;
     });
   </script>
 </body>
