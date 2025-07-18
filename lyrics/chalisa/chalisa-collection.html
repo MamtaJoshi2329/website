@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Chalisa Collection" data-hi="चालीसा संग्रह">Chalisa Collection</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .chalisa-container { max-width: 900px; margin: 2em auto; padding: 2em; background: #fffbe7; border-radius: 16px; box-shadow: 0 2px 12px #ffecb3; }
+    .chalisa-title { text-align: center; color: #d84315; margin-bottom: 1.5em; }
+    .chalisa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5em; }
+    .chalisa-card { background: #ffe0b2; border-radius: 12px; padding: 1.2em 1.5em; box-shadow: 0 2px 8px #ffecb3; text-align: center; text-decoration: none; color: #d84315; transition: box-shadow 0.2s; }
+    .chalisa-card:hover { box-shadow: 0 4px 16px #ffd54f; }
+    .chalisa-card img { width: 56px; height: 56px; margin-bottom: 0.5em; }
+    .chalisa-card div { font-weight: 600; font-size: 1.1em; }
+    .lang-switcher { text-align: right; margin-bottom: 1em; }
+    .lang-switcher button { margin-left: 6px; padding: 6px 14px; border-radius: 6px; border: none; background: #ffe0b2; color: #d84315; font-weight: 600; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo-placeholder">🕉️</div>
+          <div>
+            <div class="site-title">JoshiPanchang®</div>
+            <div class="site-tagline" data-en="Hindu Calendar for the world" data-hi="दुनिया के लिए हिन्दू कैलेंडर">Hindu Calendar for the world</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="lang-switcher">
+            <button onclick="switchLang('en')">En</button>
+            <button onclick="switchLang('hi')">हि</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../../index.html" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="../../panchang/" data-en="Panchang" data-hi="पंचांग">Panchang</a></li>
+        <li><a href="../../calendar/" data-en="Calendars" data-hi="कैलेंडर">Calendars</a></li>
+        <li><a href="../../muhurat/" data-en="Muhurat" data-hi="मुहूर्त">Muhurat</a></li>
+        <li><a href="../../vrat/" data-en="Vrat & Upavas" data-hi="व्रत और उपवास">Vrat & Upavas</a></li>
+        <li><a href="../../festivals/" data-en="Festivals" data-hi="त्योहार">Festivals</a></li>
+        <li><a href="../../jyotish/" data-en="Jyotish" data-hi="ज्योतिष">Jyotish</a></li>
+        <li><a href="../../planets/" data-en="Planets" data-hi="ग्रह">Planets</a></li>
+        <li><a href="../../lyrics/" data-en="Lyrics" data-hi="गीत">Lyrics</a></li>
+        <li><a href="../../gallery/" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+        <li><a href="../../others/" data-en="Others" data-hi="अन्य">Others</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="chalisa-container">
+        <h1 class="chalisa-title" data-en="Chalisa Collection" data-hi="चालीसा संग्रह">Chalisa Collection</h1>
+        <div class="chalisa-grid">
+          <a class="chalisa-card" href="krishna-chalisa.html">
+            <img src="../../static/lyrics/krishna.png" alt="Krishna">
+            <div data-en="Krishna Chalisa" data-hi="कृष्ण चालीसा">Krishna Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="shiva-chalisa.html">
+            <img src="../../static/lyrics/shiva.png" alt="Shiva">
+            <div data-en="Shiva Chalisa" data-hi="शिव चालीसा">Shiva Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="hanuman-chalisa.html">
+            <img src="../../static/lyrics/hanuman.png" alt="Hanuman">
+            <div data-en="Hanuman Chalisa" data-hi="हनुमान चालीसा">Hanuman Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="ganesha-chalisa.html">
+            <img src="../../static/lyrics/ganesha.png" alt="Ganesha">
+            <div data-en="Ganesha Chalisa" data-hi="गणेश चालीसा">Ganesha Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="durga-chalisa.html">
+            <img src="../../static/lyrics/durga.png" alt="Durga">
+            <div data-en="Durga Chalisa" data-hi="दुर्गा चालीसा">Durga Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="lakshmi-chalisa.html">
+            <img src="../../static/lyrics/lakshmi.png" alt="Lakshmi">
+            <div data-en="Lakshmi Chalisa" data-hi="लक्ष्मी चालीसा">Lakshmi Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="saraswati-chalisa.html">
+            <img src="../../static/lyrics/saraswati.png" alt="Saraswati">
+            <div data-en="Saraswati Chalisa" data-hi="सरस्वती चालीसा">Saraswati Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="rama-chalisa.html">
+            <img src="../../static/lyrics/rama.png" alt="Rama">
+            <div data-en="Rama Chalisa" data-hi="राम चालीसा">Rama Chalisa</div>
+          </a>
+          <a class="chalisa-card" href="vishnu-chalisa.html">
+            <img src="../../static/lyrics/vishnu.png" alt="Vishnu">
+            <div data-en="Vishnu Chalisa" data-hi="विष्णु चालीसा">Vishnu Chalisa</div>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p data-en="© 2025 JoshiPanchang. All rights reserved." data-hi="© 2025 जोशीपंचांग. सर्वाधिकार सुरक्षित।">© 2025 JoshiPanchang. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('jp_lang', lang);
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('jp_lang') || 'en';
+      switchLang(savedLang);
+    });
+  </script>
+</body>
+</html>
