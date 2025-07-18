@@ -57,41 +57,59 @@
     </nav>
     <main>
       <div class="lyrics-container">
-        <h1 class="lyrics-title" data-en="Popular Hindu Devotional Lyrics" data-hi="लोकप्रिय हिन्दू भक्ति गीत">Popular Hindu Devotional Lyrics</h1>
-        <div class="lyrics-list">
-          <div class="lyrics-card">
-            <div class="lyrics-name" data-en="Hanuman Chalisa" data-hi="हनुमान चालीसा">Hanuman Chalisa</div>
-            <div class="lyrics-desc" data-en="A 40-verse devotional hymn dedicated to Lord Hanuman, recited for strength and protection." data-hi="हनुमान जी को समर्पित ४० छंदों का भक्ति गीत, शक्ति और सुरक्षा के लिए पाठ।">A 40-verse devotional hymn dedicated to Lord Hanuman, recited for strength and protection.</div>
-            <a class="lyrics-link" href="#" onclick="openLyricsModal(0);return false;" data-en="View Lyrics" data-hi="गीत देखें">View Lyrics</a>
-          </div>
-          <div class="lyrics-card">
-            <div class="lyrics-name" data-en="Gayatri Mantra" data-hi="गायत्री मंत्र">Gayatri Mantra</div>
-            <div class="lyrics-desc" data-en="One of the most revered Vedic mantras, chanted for wisdom and spiritual growth." data-hi="सबसे पूज्य वेद मंत्रों में से एक, बुद्धि और आध्यात्मिक विकास के लिए जपा जाता है।">One of the most revered Vedic mantras, chanted for wisdom and spiritual growth.</div>
-            <a class="lyrics-link" href="#" onclick="openLyricsModal(1);return false;" data-en="View Lyrics" data-hi="मंत्र देखें">View Lyrics</a>
-          </div>
-          <div class="lyrics-card">
-            <div class="lyrics-name" data-en="Shiv Tandav Stotra" data-hi="शिव तांडव स्तोत्र">Shiv Tandav Stotra</div>
-            <div class="lyrics-desc" data-en="A powerful hymn describing the cosmic dance of Lord Shiva." data-hi="भगवान शिव के तांडव नृत्य का वर्णन करने वाला शक्तिशाली स्तोत्र।">A powerful hymn describing the cosmic dance of Lord Shiva.</div>
-            <a class="lyrics-link" href="#" onclick="openLyricsModal(2);return false;" data-en="View Lyrics" data-hi="स्तोत्र देखें">View Lyrics</a>
-          </div>
-          <div class="lyrics-card">
-            <div class="lyrics-name" data-en="Durga Aarti" data-hi="दुर्गा आरती">Durga Aarti</div>
-            <div class="lyrics-desc" data-en="A devotional song sung in praise of Goddess Durga during aarti rituals." data-hi="माँ दुर्गा की आरती में गाया जाने वाला भक्ति गीत।">A devotional song sung in praise of Goddess Durga during aarti rituals.</div>
-            <a class="lyrics-link" href="#" onclick="openLyricsModal(3);return false;" data-en="View Lyrics" data-hi="आरती देखें">View Lyrics</a>
-          </div>
-          <div class="lyrics-card">
-            <div class="lyrics-name" data-en="Vishnu Sahasranama" data-hi="विष्णु सहस्रनाम">Vishnu Sahasranama</div>
-            <div class="lyrics-desc" data-en="A list of 1,000 names of Lord Vishnu, recited for blessings and protection." data-hi="भगवान विष्णु के १००० नामों की सूची, आशीर्वाद और सुरक्षा के लिए पाठ।">A list of 1,000 names of Lord Vishnu, recited for blessings and protection.</div>
-            <a class="lyrics-link" href="#" onclick="openLyricsModal(4);return false;" data-en="View Lyrics" data-hi="नाम देखें">View Lyrics</a>
-          </div>
+        <h1 class="lyrics-title" data-en="Devotional Lyrics Collections" data-hi="भक्ति गीत संग्रह">Devotional Lyrics Collections</h1>
+        <div class="lyrics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5em;">
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Aarti" data-hi="आरती">
+            <img src="../static/lyrics/aarti.png" alt="Aarti" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Aarti" data-hi="आरती">Aarti</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Chalisa" data-hi="चालीसा">
+            <img src="../static/lyrics/chalisa.png" alt="Chalisa" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Chalisa" data-hi="चालीसा">Chalisa</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Stotram" data-hi="स्तोत्र">
+            <img src="../static/lyrics/stotram.png" alt="Stotram" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Stotram" data-hi="स्तोत्र">Stotram</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Mantra" data-hi="मंत्र">
+            <img src="../static/lyrics/mantra.png" alt="Mantra" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Mantra" data-hi="मंत्र">Mantra</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Namavali" data-hi="नामावली">
+            <img src="../static/lyrics/namavali.png" alt="Namavali" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Namavali" data-hi="नामावली">Namavali</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Durga Saptashati" data-hi="दुर्गा सप्तशती">
+            <img src="../static/lyrics/durga.png" alt="Durga Saptashati" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Durga Saptashati" data-hi="दुर्गा सप्तशती">Durga Saptashati</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Marathi Aartis" data-hi="मराठी आरती">
+            <img src="../static/lyrics/marathi.png" alt="Marathi Aartis" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Marathi Aartis" data-hi="मराठी आरती">Marathi Aartis</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Ashtakam" data-hi="अष्टकम्">
+            <img src="../static/lyrics/ashtakam.png" alt="Ashtakam" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Ashtakam" data-hi="अष्टकम्">Ashtakam</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Shatkam" data-hi="षट्कम्">
+            <img src="../static/lyrics/shatkam.png" alt="Shatkam" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Shatkam" data-hi="षट्कम्">Shatkam</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;" data-en="Kavacham" data-hi="कवचम्">
+            <img src="../static/lyrics/kavacham.png" alt="Kavacham" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Kavacham" data-hi="कवचम्">Kavacham</div>
+          </a>
         </div>
-        <!-- Lyrics Modal -->
-        <div id="lyrics-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; flex-direction:column;">
-          <span id="lyrics-modal-close" style="position:absolute; top:30px; right:40px; font-size:2.5em; color:#fff; cursor:pointer;">&times;</span>
-          <div style="background:#fffbe7; border-radius:16px; max-width:600px; width:90vw; padding:2em; box-shadow:0 2px 16px #000; text-align:left;">
-            <h2 id="lyrics-modal-title" style="color:#d84315;"></h2>
-            <pre id="lyrics-modal-content" style="white-space:pre-wrap; font-family:inherit; color:#6d4c41; font-size:1.1em; margin-top:1.2em;"></pre>
-          </div>
+        <h2 style="margin-top:2em;color:#b71c1c;text-align:center;" data-en="Ramayana Lyrics" data-hi="रामायण गीत">Ramayana Lyrics</h2>
+        <div class="lyrics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5em;">
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;">
+            <img src="../static/lyrics/ramayana1.png" alt="Nama Ramayanam" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Nama Ramayanam" data-hi="नाम रामायणम्">Nama Ramayanam</div>
+          </a>
+          <a class="lyrics-cat" href="#" style="text-align:center;text-decoration:none;">
+            <img src="../static/lyrics/ramayana2.png" alt="Eka Shloki Ramayana" style="width:64px;height:64px;margin-bottom:0.5em;">
+            <div data-en="Eka Shloki Ramayana" data-hi="एक श्लोकी रामायण">Eka Shloki Ramayana</div>
+          </a>
         </div>
       </div>
     </main>
@@ -100,96 +118,11 @@
     </footer>
   </div>
   <script>
-    // Lyrics data for modal (English and Hindi)
-    const lyricsData = [
-      {
-        title: { en: "Hanuman Chalisa", hi: "हनुमान चालीसा" },
-        content: {
-          en: `Shri Guru Charan Saroj Raj, Nij manu mukuru sudhari
-Barnau Raghuvar Bimal Jasu, Jo dayaku phal chari
-... (full Hanuman Chalisa here) ...`,
-          hi: `श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि
-बरनऊँ रघुबर बिमल जसु, जो दायकु फल चारि
-... (हनुमान चालीसा यहाँ) ...`
-        }
-      },
-      {
-        title: { en: "Gayatri Mantra", hi: "गायत्री मंत्र" },
-        content: {
-          en: `Om Bhur Bhuvah Swaha
-Tat Savitur Varenyam
-Bhargo Devasya Dhīmahi
-Dhiyo Yo Nah Prachodayat`,
-          hi: `ॐ भूर्भुवः स्वः
-तत्सवितुर्वरेण्यं
-भर्गो देवस्य धीमहि
-धियो यो नः प्रचोदयात्`
-        }
-      },
-      {
-        title: { en: "Shiv Tandav Stotra", hi: "शिव तांडव स्तोत्र" },
-        content: {
-          en: `Jatatavigalajjala pravahapavitasthale
-Galeavalambya lambitam bhujangatungamalikam
-... (full stotra here) ...`,
-          hi: `जटाटवीगलज्जल प्रवाहपावितस्थले
-गलेऽवलम्ब्य लम्बितां भुजङ्गतुङ्गमालिकाम्
-... (शिव तांडव स्तोत्र यहाँ) ...`
-        }
-      },
-      {
-        title: { en: "Durga Aarti", hi: "दुर्गा आरती" },
-        content: {
-          en: `Jai Ambe Gauri, Maiya Jai Shyama Gauri
-Tumko Nishdin Dhyavat, Hari Brahma Shivri
-... (full aarti here) ...`,
-          hi: `जय अम्बे गौरी, मैया जय श्यामा गौरी
-तुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी
-... (दुर्गा आरती यहाँ) ...`
-        }
-      },
-      {
-        title: { en: "Vishnu Sahasranama", hi: "विष्णु सहस्रनाम" },
-        content: {
-          en: `Om Shuklãmbaradharam Vishnum
-Shashivarnam Chaturbhujam
-Prasanna Vadanam Dhyayet
-Sarva Vighnopashantaye
-... (full sahasranama here) ...`,
-          hi: `ॐ शुक्लांबरधरं विष्णुं
-शशिवर्णं चतुर्भुजम्
-प्रसन्न वदनं ध्यायेत्
-सर्व विघ्नोपशान्तये
-... (विष्णु सहस्रनाम यहाँ) ...`
-        }
-      }
-    ];
-    function openLyricsModal(idx) {
-      const lang = localStorage.getItem('jp_lang') || 'en';
-      document.getElementById('lyrics-modal-title').textContent = lyricsData[idx].title[lang];
-      document.getElementById('lyrics-modal-content').textContent = lyricsData[idx].content[lang];
-      document.getElementById('lyrics-modal').style.display = 'flex';
-      // Store current index for language switching
-      document.getElementById('lyrics-modal').setAttribute('data-idx', idx);
-    }
-    document.getElementById('lyrics-modal-close').onclick = function() {
-      document.getElementById('lyrics-modal').style.display = 'none';
-    };
-    // Update modal lyrics on language switch
-    function updateLyricsModalLang(lang) {
-      const modal = document.getElementById('lyrics-modal');
-      if (modal.style.display !== 'none') {
-        const idx = modal.getAttribute('data-idx');
-        document.getElementById('lyrics-modal-title').textContent = lyricsData[idx].title[lang];
-        document.getElementById('lyrics-modal-content').textContent = lyricsData[idx].content[lang];
-      }
-    }
     function switchLang(lang) {
       localStorage.setItem('jp_lang', lang);
       document.querySelectorAll('[data-en]').forEach(function(el) {
         el.textContent = el.getAttribute('data-' + lang);
       });
-      updateLyricsModalLang(lang);
     }
     document.addEventListener('DOMContentLoaded', function() {
       const savedLang = localStorage.getItem('jp_lang') || 'en';
