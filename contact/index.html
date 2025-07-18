@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Contact Us | JoshiPanchang" data-hi="संपर्क करें | जोशीपंचांग">Contact Us | JoshiPanchang</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo-placeholder">🕉️</div>
+          <div>
+            <div class="site-title">JoshiPanchang®</div>
+            <div class="site-tagline" data-en="Hindu Calendar for the world" data-hi="दुनिया के लिए हिन्दू कैलेंडर">Hindu Calendar for the world</div>
+          </div>
+        </div>
+        <div class="search-section">
+          <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search Joshi Panchang">
+            <button class="search-button">🔍</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="lang-switcher" style="display:inline-block; margin-left:12px;">
+            <button onclick="switchLang('en')" style="margin-right:4px; padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">En</button>
+            <button onclick="switchLang('hi')" style="padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">हि</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="../panchang/" data-en="Panchang" data-hi="पंचांग">Panchang</a></li>
+        <li><a href="../calendar/" data-en="Calendars" data-hi="कैलेंडर">Calendars</a></li>
+        <li><a href="../muhurat/" data-en="Muhurat" data-hi="मुहूर्त">Muhurat</a></li>
+        <li><a href="../vrat/" data-en="Vrat & Upavas" data-hi="व्रत और उपवास">Vrat & Upavas</a></li>
+        <li><a href="../festivals/" data-en="Festivals" data-hi="त्योहार">Festivals</a></li>
+        <li><a href="../jyotish/" data-en="Jyotish" data-hi="ज्योतिष">Jyotish</a></li>
+        <li><a href="../planets/" data-en="Planets" data-hi="ग्रह">Planets</a></li>
+        <li><a href="../lyrics/" data-en="Lyrics" data-hi="गीत">Lyrics</a></li>
+        <li><a href="../gallery/" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+        <li><a href="../others/" data-en="Others" data-hi="अन्य">Others</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="contact-container" style="max-width:600px;margin:2em auto;padding:2em;background:#fffbe7;border-radius:16px;box-shadow:0 2px 12px #ffecb3;">
+        <h1 class="contact-title" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h1>
+        <p class="contact-desc" data-en="Have a question or feedback? Reach out to us!" data-hi="कोई सवाल या सुझाव है? हमसे संपर्क करें!">Have a question or feedback? Reach out to us!</p>
+        <form>
+          <label data-en="Your Name" data-hi="आपका नाम">Your Name</label><br>
+          <input type="text" style="width:100%;margin-bottom:1em;"><br>
+          <label data-en="Your Email" data-hi="आपका ईमेल">Your Email</label><br>
+          <input type="email" style="width:100%;margin-bottom:1em;"><br>
+          <label data-en="Message" data-hi="संदेश">Message</label><br>
+          <textarea style="width:100%;height:80px;margin-bottom:1em;"></textarea><br>
+          <button type="submit" data-en="Send" data-hi="भेजें" style="background:#ff7043;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:1em;">Send</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p data-en="© 2025 JoshiPanchang. All rights reserved." data-hi="© 2025 जोशीपंचांग. सर्वाधिकार सुरक्षित।">© 2025 JoshiPanchang. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('jp_lang', lang);
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('jp_lang') || 'en';
+      switchLang(savedLang);
+    });
+  </script>
+</body>
+</html>

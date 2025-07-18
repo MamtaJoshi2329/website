@@ -14,7 +14,7 @@
           <div class="logo-placeholder">🕉️</div>
           <div>
             <div class="site-title">JoshiPanchang®</div>
-            <div class="site-tagline">Hindu Calendar for the world</div>
+            <div class="site-tagline" data-en="Hindu Calendar for the world" data-hi="दुनिया के लिए हिन्दू कैलेंडर">Hindu Calendar for the world</div>
           </div>
         </div>
         
@@ -26,35 +26,34 @@
         </div>
         
         <div class="header-actions">
-          <div class="app-buttons">
-            <a href="#" class="app-button">📱</a>
-            <a href="#" class="app-button">🍎</a>
+          <div class="lang-switcher" style="display:inline-block; margin-left:12px;">
+            <button onclick="switchLang('en')" style="margin-right:4px; padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">En</button>
+            <button onclick="switchLang('hi')" style="padding:6px 14px; border-radius:6px; border:none; background:#ffe0b2; color:#d84315; font-weight:600; cursor:pointer;">हि</button>
           </div>
-          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
         </div>
       </div>
     </header>
 
     <nav>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../panchang/">Panchang</a></li>
-        <li><a href="../calendar/">Calendars</a></li>
-        <li><a href="../muhurat/">Muhurat</a></li>
-        <li><a href="../vrat/">Vrat & Upavas</a></li>
-        <li><a href="../festivals/">Festivals</a></li>
-        <li><a href="../jyotish/">Jyotish</a></li>
-        <li><a href="../planets/">Planets</a></li>
-        <li><a href="../lyrics/">Lyrics</a></li>
-        <li><a href="../gallery/">Gallery</a></li>
-        <li><a href="../others/">Others</a></li>
+        <li><a href="../index.html" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="../panchang/" data-en="Panchang" data-hi="पंचांग">Panchang</a></li>
+        <li><a href="../calendar/" data-en="Calendars" data-hi="कैलेंडर">Calendars</a></li>
+        <li><a href="../muhurat/" data-en="Muhurat" data-hi="मुहूर्त">Muhurat</a></li>
+        <li><a href="../vrat/" data-en="Vrat & Upavas" data-hi="व्रत और उपवास">Vrat & Upavas</a></li>
+        <li><a href="../festivals/" data-en="Festivals" data-hi="त्योहार">Festivals</a></li>
+        <li><a href="../jyotish/" data-en="Jyotish" data-hi="ज्योतिष">Jyotish</a></li>
+        <li><a href="../planets/" data-en="Planets" data-hi="ग्रह">Planets</a></li>
+        <li><a href="../lyrics/" data-en="Lyrics" data-hi="गीत">Lyrics</a></li>
+        <li><a href="../gallery/" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+        <li><a href="../others/" data-en="Others" data-hi="अन्य">Others</a></li>
       </ul>
     </nav>
 
     <main>
       <div class="hero-section">
-        <h1 class="hero-title">Daily Panchang</h1>
-        <p class="hero-subtitle">Complete Hindu Panchang with Tithi, Nakshatra, Yoga, and Karana</p>
+        <h1 class="hero-title" data-en="Daily Panchang" data-hi="दैनिक पंचांग">Daily Panchang</h1>
+        <p class="hero-subtitle" data-en="Complete Hindu Panchang with Tithi, Nakshatra, Yoga, and Karana" data-hi="तिथि, नक्षत्र, योग, करण सहित सम्पूर्ण हिन्दू पंचांग">Complete Hindu Panchang with Tithi, Nakshatra, Yoga, and Karana</p>
       </div>
 
       <div class="date-section">
@@ -118,8 +117,46 @@
     </main>
 
     <footer>
-      <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
+      <p data-en="© 2025 JoshiPanchang. All rights reserved." data-hi="© 2025 जोशीपंचांग. सर्वाधिकार सुरक्षित।">© 2025 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('jp_lang', lang);
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      // Update the date box in the correct language
+      var today = new Date();
+      var days = {
+        en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        hi: ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार']
+      };
+      var months = {
+        en: [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+        ],
+        hi: [
+          'जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून',
+          'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'
+        ]
+      };
+      var day = today.getDate();
+      var month = months[lang][today.getMonth()];
+      var year = today.getFullYear();
+      var dayName = days[lang][today.getDay()];
+      var dateNumberElem = document.querySelector('.current-date .day');
+      var dateMonthElem = document.querySelector('.current-date .month-year');
+      var dateDayElem = document.querySelector('.current-date .weekday');
+      if (dateNumberElem) dateNumberElem.textContent = day;
+      if (dateMonthElem) dateMonthElem.textContent = month + ' ' + year;
+      if (dateDayElem) dateDayElem.textContent = dayName;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('jp_lang') || 'en';
+      switchLang(savedLang);
+    });
+  </script>
 </body>
 </html>
