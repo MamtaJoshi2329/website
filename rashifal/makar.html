@@ -68,28 +68,212 @@
             <a href="#" class="app-button">📱</a>
             <a href="#" class="app-button">🍎</a>
           </div>
-          <button style="background: #333; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px;">En</button>
+          <button class="lang-btn active" onclick="switchLang('en')">En</button>
+          <button class="lang-btn" onclick="switchLang('hi')">हि</button>
         </div>
       </div>
     </header>
 
     <nav>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../panchang/">Panchang</a></li>
-        <li><a href="../calendar/">Calendars</a></li>
-        <li><a href="../muhurat/">Muhurat</a></li>
-        <li><a href="../vrat/">Vrat & Upavas</a></li>
-        <li><a href="../festivals/">Festivals</a></li>
-        <li><a href="../jyotish/">Jyotish</a></li>
-        <li><a href="../planets/">Planets</a></li>
-        <li><a href="../lyrics/">Lyrics</a></li>
-        <li><a href="../gallery/">Gallery</a></li>
-        <li><a href="../others/">Others</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/panchang/index.html">Panchang</a></li>
+        <li><a href="/calendar/index.html">Calendars</a></li>
+        <li><a href="/muhurat/index.html">Muhurat</a></li>
+        <li><a href="/vrat/index.html">Vrat & Upavas</a></li>
+        <li><a href="/festivals/index.html">Festivals</a></li>
+        <li><a href="/jyotish/index.html">Jyotish</a></li>
+        <li><a href="/planets/index.html">Planets</a></li>
+        <li><a href="/lyrics/index.html">Lyrics</a></li>
+        <li><a href="/gallery/index.html">Gallery</a></li>
+        <li><a href="/others/index.html">Others</a></li>
       </ul>
     </nav>
 
     <main>
+      <div class="rashifal-header">
+        <h1 class="rashifal-title">Makar Rashifal</h1>
+        <p class="rashifal-date" id="today-date"></p>
+      </div>
+
+      <!-- Remove the day-nav buttons -->
+
+      <div class="date-nav">
+        <div class="date-item" id="prev-day" onclick="switchCalendarDay(-1)">
+          <span class="date-arrow">←</span>
+          <span class="date-day">WEDNESDAY</span>
+        </div>
+        <div class="date-item active" id="calendar-thursday" onclick="showCalendarDay('thursday', this)">
+          <span class="date-icon">📅</span>
+          <span class="date-day">THURSDAY</span>
+          <span class="date-number">17</span>
+        </div>
+        <div class="date-item" id="calendar-friday" onclick="showCalendarDay('friday', this)">
+          <span class="date-day">FRIDAY</span>
+          <span class="date-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- Day-specific rashifal content -->
+      <div id="wednesday-block" class="day-block" style="display:none">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'wednesday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'wednesday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'wednesday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'wednesday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
+        </div>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Joshiji predicts for the day.</p>
+          </div>
+          <div id="old-daily-wednesday" class="old-rashifal-section">
+            <h3>Wednesday's Prediction</h3>
+            <p><b>Career & Work:</b> Today is favorable for business meetings and negotiations. Your leadership skills will be recognized. Students will perform well in academic activities.</p>
+            <p><b>Health & Wellness:</b> Focus on maintaining a balanced diet. Light exercise will be beneficial. Avoid stress and practice meditation for mental peace.</p>
+            <p><b>Relationships:</b> Communication with family members will be harmonious. Old friends may contact you. Romantic relationships will strengthen.</p>
+            <p><b>Finance:</b> Good day for financial planning. Avoid unnecessary expenses. Investment opportunities may arise.</p>
+          </div>
+          <div id="old-weekly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings excellent opportunities for career advancement. Business partnerships will flourish. Financial gains are indicated through hard work.</p>
+            <p><b>Health & Wellness:</b> Overall health will remain good. Focus on maintaining regular exercise routine. Mental clarity will improve.</p>
+            <p><b>Relationships:</b> Family relationships will be harmonious. Social gatherings will be enjoyable. New friendships may form.</p>
+            <p><b>Inauspicious Prediction:</b> Minor health issues may arise due to stress. Avoid conflicts in professional settings. Be cautious with financial decisions.</p>
+          </div>
+          <div id="old-monthly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is highly favorable for career growth. New job opportunities may arise. Business expansion is indicated. Financial stability will improve.</p>
+            <p><b>Health & Relationships:</b> Health will remain generally good. Family relationships will strengthen. Students will achieve excellent results.</p>
+            <p><b>Travel & Education:</b> Short trips will be beneficial. Educational pursuits will be successful. Learning new skills will prove valuable.</p>
+            <p><b>Spiritual Growth:</b> This month is good for spiritual practices. Meditation and yoga will bring inner peace.</p>
+          </div>
+          <div id="old-yearly-wednesday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be transformative for Capricorn natives. Major career changes are indicated. Financial prosperity will increase.</p>
+            <p><b>Career & Business:</b> Professional growth will be significant. New business ventures will be successful. Leadership opportunities will arise.</p>
+            <p><b>Health & Relationships:</b> Health will remain stable with proper care. Family relationships will strengthen. New meaningful relationships may form.</p>
+            <p><b>Key Advice:</b> Focus on long-term goals. Avoid unnecessary risks. Your determination will lead to success.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="thursday-block" class="day-block">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'thursday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'thursday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'thursday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'thursday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
+        </div>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Joshiji predicts for the day.</p>
+          </div>
+          <div id="old-daily-thursday" class="old-rashifal-section">
+            <h3>Thursday's Prediction</h3>
+            <p>Today, mental pressure may increase on you. Your in-laws may face problems. You are not able to use your intelligence properly. You may have headaches. Migraine patients should take special care of their diet and sleep.</p>
+          </div>
+          <div id="old-weekly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week, you will feel a special kind of closeness in personal relationships. This week will be favorable for business. You will get excellent support from your colleagues at work.</p>
+            <p><b>Inauspicious Prediction:</b> You may face some challenges in financial matters. Avoid taking major decisions without proper consultation. Health requires attention, especially related to joint pains.</p>
+          </div>
+          <div id="old-monthly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month brings opportunities for career growth. New business ventures may prove profitable. Investment decisions should be made carefully after proper research.</p>
+            <p><b>Health & Relationships:</b> Health will remain generally good. Family relationships will be harmonious. Students will achieve good results in their studies.</p>
+          </div>
+          <div id="old-yearly-thursday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be transformative for Capricorn natives. Major changes in career and personal life are indicated. Financial stability will improve gradually.</p>
+            <p><b>Key Advice:</b> Focus on building long-term relationships and avoid unnecessary risks. Your hard work will pay off in the second half of the year. Health should be monitored regularly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="friday-block" class="day-block" style="display:none">
+        <div class="timeframe-nav">
+          <div class="timeframe-item active" onclick="showOldTab('daily', this, 'friday')">
+            <span class="timeframe-letter">D</span>
+            <span class="timeframe-text">DAILY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('weekly', this, 'friday')">
+            <span class="timeframe-letter">W</span>
+            <span class="timeframe-text">WEEKLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('monthly', this, 'friday')">
+            <span class="timeframe-letter">M</span>
+            <span class="timeframe-text">MONTHLY</span>
+          </div>
+          <div class="timeframe-item" onclick="showOldTab('yearly', this, 'friday')">
+            <span class="timeframe-letter">Y</span>
+            <span class="timeframe-text">YEARLY</span>
+          </div>
+        </div>
+        <div class="rashifal-content">
+          <div class="rashifal-symbol">
+            <img src="../static/rashifal/capricorn.png" alt="Capricorn" width="120" height="120">
+            <p class="symbol-text">...know what Joshiji predicts for the day.</p>
+          </div>
+          <div id="old-daily-friday" class="old-rashifal-section">
+            <h3>Friday's Prediction</h3>
+            <p><b>Career & Work:</b> Today is excellent for creative projects and artistic pursuits. Your innovative ideas will be appreciated. Team collaboration will be successful.</p>
+            <p><b>Health & Wellness:</b> Focus on emotional well-being. Practice relaxation techniques. Avoid overthinking and maintain positive mindset.</p>
+            <p><b>Relationships:</b> Romantic relationships will flourish. Family harmony will increase. Social interactions will be enjoyable.</p>
+            <p><b>Finance:</b> Good day for investments in creative ventures. Avoid impulsive spending. Financial gains through artistic work.</p>
+          </div>
+          <div id="old-weekly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Week's Prediction</h3>
+            <p><b>Auspicious Prediction:</b> This week brings creative opportunities and artistic success. Love and romance will be favorable. Financial gains through creative work.</p>
+            <p><b>Health & Wellness:</b> Emotional health will improve. Creative activities will bring joy. Meditation will be beneficial.</p>
+            <p><b>Relationships:</b> Romantic relationships will strengthen. Family bonds will deepen. New friendships may form through creative activities.</p>
+            <p><b>Inauspicious Prediction:</b> Avoid emotional conflicts. Don't let creative blocks affect your mood. Be patient with financial matters.</p>
+          </div>
+          <div id="old-monthly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Month's Prediction</h3>
+            <p><b>Career & Finance:</b> This month is excellent for creative and artistic pursuits. New opportunities in entertainment industry. Financial gains through creative work.</p>
+            <p><b>Health & Relationships:</b> Emotional well-being will improve. Love relationships will flourish. Family harmony will increase.</p>
+            <p><b>Travel & Education:</b> Creative trips will be beneficial. Learning artistic skills will be successful. Cultural activities will bring joy.</p>
+            <p><b>Spiritual Growth:</b> This month is good for creative spiritual practices. Art therapy will be beneficial.</p>
+          </div>
+          <div id="old-yearly-friday" class="old-rashifal-section" style="display:none">
+            <h3>This Year's Prediction</h3>
+            <p><b>Overall Outlook:</b> This year will be highly creative and artistic for Capricorn natives. Love and romance will be favorable. Creative success is indicated.</p>
+            <p><b>Career & Business:</b> Creative career opportunities will arise. Success in entertainment and arts. New business ventures in creative fields.</p>
+            <p><b>Health & Relationships:</b> Emotional health will be good. Love relationships will flourish. Family relationships will strengthen.</p>
+            <p><b>Key Advice:</b> Embrace your creative side. Follow your heart in relationships. Your artistic talents will bring success.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language-specific rashifal content -->
+      <div class="lang-en">
+      <!-- BEGIN ENGLISH CONTENT -->
       <div class="rashifal-header">
         <h1 class="rashifal-title">Makar Rashifal</h1>
         <p class="rashifal-date">Thursday, July 17, 2025</p>
@@ -269,8 +453,104 @@
           </div>
         </div>
       </div>
-
+      </div>
+      <div class="lang-hi" style="display:none">
+      <!-- BEGIN HINDI CONTENT (replace with your actual Hindi translation) -->
+        <div class="rashifal-header">
+          <h1 class="rashifal-title">मकर राशिफल</h1>
+          <p class="rashifal-date">गुरुवार, 17 जुलाई, 2025</p>
+        </div>
+        <div class="date-nav">
+          <div class="date-item" id="prev-day-hi" onclick="switchCalendarDay(-1)">
+            <span class="date-arrow">←</span>
+            <span class="date-day">बुधवार</span>
+          </div>
+          <div class="date-item active" id="calendar-thursday-hi" onclick="showCalendarDay('thursday', this)">
+            <span class="date-icon">📅</span>
+            <span class="date-day">गुरुवार</span>
+            <span class="date-number">17</span>
+          </div>
+          <div class="date-item" id="calendar-friday-hi" onclick="showCalendarDay('friday', this)">
+            <span class="date-day">शुक्रवार</span>
+            <span class="date-arrow">→</span>
+          </div>
+        </div>
+        <!-- Add Hindi rashifal content for each day here, following the same structure as English -->
+        <div id="wednesday-block-hi" class="day-block" style="display:none">
+          <!-- Hindi Wednesday content -->
+          <div class="rashifal-content">
+            <div class="rashifal-symbol">
+              <img src="../static/rashifal/capricorn.png" alt="मकर" width="120" height="120">
+              <p class="symbol-text">...जानिए जोशीजी का आज का भविष्यफल।</p>
+            </div>
+            <div id="old-daily-wednesday-hi" class="old-rashifal-section">
+              <h3>बुधवार का भविष्यफल</h3>
+              <p>आज का दिन व्यवसायिक बैठकों के लिए अनुकूल है। नेतृत्व क्षमता की सराहना होगी। छात्रों को शैक्षणिक गतिविधियों में सफलता मिलेगी।</p>
+            </div>
+            <!-- Add weekly, monthly, yearly Hindi content as needed -->
+          </div>
+        </div>
+        <div id="thursday-block-hi" class="day-block">
+          <div class="rashifal-content">
+            <div class="rashifal-symbol">
+              <img src="../static/rashifal/capricorn.png" alt="मकर" width="120" height="120">
+              <p class="symbol-text">...जानिए जोशीजी का आज का भविष्यफल।</p>
+            </div>
+            <div id="old-daily-thursday-hi" class="old-rashifal-section">
+              <h3>गुरुवार का भविष्यफल</h3>
+              <p>आज मानसिक दबाव बढ़ सकता है। ससुराल पक्ष में समस्याएँ आ सकती हैं। सिरदर्द की संभावना है। माइग्रेन के मरीजों को विशेष ध्यान रखना चाहिए।</p>
+            </div>
+            <!-- Add weekly, monthly, yearly Hindi content as needed -->
+          </div>
+        </div>
+        <div id="friday-block-hi" class="day-block" style="display:none">
+          <!-- Hindi Friday content -->
+          <div class="rashifal-content">
+            <div class="rashifal-symbol">
+              <img src="../static/rashifal/capricorn.png" alt="मकर" width="120" height="120">
+              <p class="symbol-text">...जानिए जोशीजी का आज का भविष्यफल।</p>
+            </div>
+            <div id="old-daily-friday-hi" class="old-rashifal-section">
+              <h3>शुक्रवार का भविष्यफल</h3>
+              <p>आज रचनात्मक कार्यों के लिए उत्तम दिन है। टीम सहयोग मिलेगा। भावनात्मक स्वास्थ्य पर ध्यान दें।</p>
+            </div>
+            <!-- Add weekly, monthly, yearly Hindi content as needed -->
+          </div>
+        </div>
+      </div>
+      </div>
       <script>
+        // Set today's date dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+          var dateElem = document.getElementById('today-date');
+          if (dateElem) {
+            var today = new Date();
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var months = [
+              'January', 'February', 'March', 'April', 'May', 'June',
+              'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            var dayName = days[today.getDay()];
+            var day = today.getDate();
+            var month = months[today.getMonth()];
+            var year = today.getFullYear();
+            dateElem.textContent = dayName + ', ' + month + ' ' + day + ', ' + year;
+          }
+        });
+        // Language switcher
+        function switchLang(lang) {
+          document.querySelectorAll('.lang-en, .lang-hi').forEach(function(div) {
+            div.style.display = 'none';
+          });
+          document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+          if(lang === 'en') {
+            document.querySelector('.lang-en').style.display = 'block';
+            document.querySelector('.lang-btn[onclick="switchLang(\'en\')"]')?.classList.add('active');
+          } else if(lang === 'hi') {
+            document.querySelector('.lang-hi').style.display = 'block';
+            document.querySelector('.lang-btn[onclick="switchLang(\'hi\')"]')?.classList.add('active');
+          }
+        }
         // Remove showDay function
         function showCalendarDay(day, el) {
           document.getElementById('wednesday-block').style.display = 'none';
@@ -298,8 +578,73 @@
           el.parentElement.querySelectorAll('.timeframe-item').forEach(item => item.classList.remove('active'));
           el.classList.add('active');
         }
-        // Set Thursday as default visible
+        // Tab functionality (fix: run after DOM is loaded)
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+            tab.addEventListener('click', function() {
+              document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+              this.classList.add('active');
+              document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+                section.style.display = 'none';
+              });
+              const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+              document.querySelector('.' + sections[index]).style.display = 'block';
+            });
+          });
+        });
+        // Set Thursday as default visible for both languages
         showCalendarDay('thursday', document.getElementById('calendar-thursday'));
+        // For Hindi, set Thursday as default
+        document.getElementById('thursday-block-hi').style.display = 'block';
+        document.getElementById('wednesday-block-hi').style.display = 'none';
+        document.getElementById('friday-block-hi').style.display = 'none';
+        // Set default language
+        switchLang('en');
+      </script>
+      <script>
+        // Search bar functionality with keyword mapping
+        document.addEventListener('DOMContentLoaded', function() {
+          const searchInput = document.querySelector('.search-input');
+          const searchButton = document.querySelector('.search-button');
+          if (searchButton && searchInput) {
+            searchButton.addEventListener('click', function() {
+              const query = searchInput.value.trim().toLowerCase();
+              // Mapping keywords to pages
+              if (query === 'festival' || query === 'festivals') {
+                window.location.href = '/festivals/index.html';
+              } else if (query === 'panchang') {
+                window.location.href = '/panchang/index.html';
+              } else if (
+                query === 'calendar' ||
+                query === 'calendars' ||
+                query === 'calender' ||
+                query === 'calenders'
+              ) {
+                window.location.href = '/calendar/index.html';
+              } else if (query === 'vrat') {
+                window.location.href = '/vrat/index.html';
+              } else if (query === 'jyotish') {
+                window.location.href = '/jyotish/index.html';
+              } else if (query === 'planets') {
+                window.location.href = '/planets/index.html';
+              } else if (query === 'lyrics') {
+                window.location.href = '/lyrics/index.html';
+              } else if (query === 'gallery') {
+                window.location.href = '/gallery/index.html';
+              } else if (query === 'others') {
+                window.location.href = '/others/index.html';
+              } else {
+                // Default: go to search results page
+                window.location.href = '/search.html?q=' + encodeURIComponent(query);
+              }
+            });
+            searchInput.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter') {
+                searchButton.click();
+              }
+            });
+          }
+        });
       </script>
     </main>
 

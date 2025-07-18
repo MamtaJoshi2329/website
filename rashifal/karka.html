@@ -186,24 +186,20 @@
   </div>
 
   <script>
-    // Tab functionality
-    document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
-      tab.addEventListener('click', function() {
-        // Remove active class from all tabs
-        document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
-        // Add active class to clicked tab
-        this.classList.add('active');
-        
-        // Hide all prediction sections
-        document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
-          section.style.display = 'none';
-        });
-        
-        // Show corresponding section
-        const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
-        document.querySelector('.' + sections[index]).style.display = 'block';
-      });
-    });
+     // Tab functionality (fix: run after DOM is loaded)
+     document.addEventListener('DOMContentLoaded', function() {
+       document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+         tab.addEventListener('click', function() {
+           document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+           this.classList.add('active');
+           document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+             section.style.display = 'none';
+           });
+           const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+           document.querySelector('.' + sections[index]).style.display = 'block';
+         });
+       });
+     });
   </script>
 </body>
 </html>

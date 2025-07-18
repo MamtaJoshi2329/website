@@ -156,5 +156,21 @@
       <p>&copy; 2024 JoshiPanchang. All rights reserved.</p>
     </footer>
   </div>
+  <script>
+     // Tab functionality (fix: run after DOM is loaded)
+     document.addEventListener('DOMContentLoaded', function() {
+       document.querySelectorAll('.timeframe-item').forEach((tab, index) => {
+         tab.addEventListener('click', function() {
+           document.querySelectorAll('.timeframe-item').forEach(t => t.classList.remove('active'));
+           this.classList.add('active');
+           document.querySelectorAll('.daily-prediction, .weekly-prediction, .monthly-prediction, .yearly-prediction').forEach(section => {
+             section.style.display = 'none';
+           });
+           const sections = ['daily-prediction', 'weekly-prediction', 'monthly-prediction', 'yearly-prediction'];
+           document.querySelector('.' + sections[index]).style.display = 'block';
+         });
+       });
+     });
+  </script>
 </body>
 </html>
